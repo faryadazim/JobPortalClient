@@ -9,7 +9,8 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import ErrorPage from './error-page.jsx'
-import Home from './routes/Home'
+import Jobs from './routes/Jobs' 
+import JobSingle from './JobSingle'
 // import Other from './Other.jsx'
 
 
@@ -21,10 +22,14 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: < Home />,
-      },
+        element: < Jobs />,
+      }, {
+        path:"/job/:id",
+        element:<JobSingle/>
+      }
     ],
   },
+ 
   // {
   //   path: "/others",
   //   element: <Other />,

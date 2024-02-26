@@ -1,16 +1,18 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import Logo from './images/logo.png'
 import Job from './images/job_06.jpg'
+import axios from 'axios'
 // import Flogo from './images/flogo.png' 
 import { Outlet, Link } from "react-router-dom";
+import Loader from './Loader'
+import Home from './routes/Home'
 function App() {
   const [count, setCount] = useState(0)
-  const [currentPage, setCurrentPage] = useState("/")
+  // const [currentPage, setCurrentPage] = useState("/")
   const [currentPageInside, setCurrentPageInside] = useState("/logged")
-
 
   return (
     <>
@@ -62,7 +64,9 @@ function App() {
               </> : <></>
         } */}
 
-        <Outlet />
+       
+        <Outlet /> 
+
         {/* end section */}
 
 
