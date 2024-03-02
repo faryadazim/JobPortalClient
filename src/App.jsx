@@ -28,8 +28,8 @@ function App() {
                     <span className="icon-bar" />
                     <span className="icon-bar" />
                   </button>
-                  <a className="navbar-brand" href="index.html">
-                    <img src={Logo} className="img-responsive" /></a>
+                  <Link className="navbar-brand" to="/">
+                    <img src={Logo} className="img-responsive" /></Link>
                 </div>
                 {/* end navbar header */}
                 <div id="navbar" className="navbar-collapse collapse">
