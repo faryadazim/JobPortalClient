@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useParams, Link } from 'react-router-dom'
-import './JobTable.css'
+import './Jobtable.css'
 import axios from 'axios'
 import { formatDate } from './utilities'
 import Loader from './Loader'
@@ -21,7 +21,7 @@ const JobSingle = () => {
         axios.request(config)
             .then((response) => {
                 console.log(response.data, "data is here")
-                setX(response.data)
+                setX(response.data.payload)
                 setIsLoading(false)
             })
             .catch((error) => {
@@ -85,58 +85,71 @@ const JobSingle = () => {
                                 </div>
                                 <br />
 
+                                <div className="row">
+                                    <div className="col-md-6">
+                                        <div class="containerTbl">
 
-                                <div >
-                                    <h2 className='mb-3 text-center'>Important Point | Qualification</h2>
+                                            <div class="tableTbl">
+                                                <div class="tableTbl-header">
+                                                    <div class="header__itemTbl" ><a id="name" class="filter__linkTbl text-center" style={{textAlign:"center"}}>Important Point | Qualification</a></div>
+                                                </div>
+                                                <div class="tableTbl-content">
+                                                    <div class="tableTbl-row">
+                                                        <div class="tableTbl-dataLft">Post Name</div>
+                                                        <div class="tableTbl-dataRgt">{x?.post_name}</div>
 
-                                    <table className="containerTbl">
-                                        <thead>
-                                            <tr>
-                                                <th><h1>Sites</h1></th>
-                                                <th><h1>Views</h1></th>
-                                                <th><h1>Clicks</h1></th>
-                                                <th><h1>Average</h1></th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>Google</td>
-                                                <td>9518</td>
-                                                <td>6369</td>
-                                                <td>01:32:50</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Twitter</td>
-                                                <td>7326</td>
-                                                <td>10437</td>
-                                                <td>00:51:22</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Amazon</td>
-                                                <td>4162</td>
-                                                <td>5327</td>
-                                                <td>00:24:34</td>
-                                            </tr>
-                                            <tr>
-                                                <td>LinkedIn</td>
-                                                <td>3654</td>
-                                                <td>2961</td>
-                                                <td>00:12:10</td>
-                                            </tr>
-                                            <tr>
-                                                <td>CodePen</td>
-                                                <td>2002</td>
-                                                <td>4135</td>
-                                                <td>00:46:19</td>
-                                            </tr>
-                                            <tr>
-                                                <td>GitHub</td>
-                                                <td>4623</td>
-                                                <td>3486</td>
-                                                <td>00:31:52</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
+                                                    </div>
+                                                    <div class="tableTbl-row">
+                                                        <div class="tableTbl-dataLft">Gender</div>
+                                                        <div class="tableTbl-dataRgt">{x?.gender}</div>
+
+                                                    </div>
+                                                    <div class="tableTbl-row">
+                                                        <div class="tableTbl-dataLft">Department</div>
+                                                        <div class="tableTbl-dataRgt">{x?.department}</div>
+                                                    </div>
+                                                    <div class="tableTbl-row">
+                                                        <div class="tableTbl-dataLft">Education</div>
+                                                        <div class="tableTbl-dataRgt">{x?.education}</div>
+                                                    </div>
+                                                    <div class="tableTbl-row">
+                                                        <div class="tableTbl-dataLft">Age Limit</div>
+                                                        <div class="tableTbl-dataRgt">{x?.age_limit}</div>
+                                                    </div>
+                                                    <div class="tableTbl-row">
+                                                        <div class="tableTbl-dataLft">Procedure</div>
+                                                        <div class="tableTbl-dataRgt">{x?.procedure}</div>
+                                                    </div>
+                                                    <div class="tableTbl-row">
+                                                        <div class="tableTbl-dataLft">Domicile</div>
+                                                        <div class="tableTbl-dataRgt">{x?.domicile}</div>
+                                                    </div>
+                                                    <div class="tableTbl-row">
+                                                        <div class="tableTbl-dataLft">Vacancies</div>
+                                                        <div class="tableTbl-dataRgt">{x?.vacancies}</div>
+                                                    </div>
+                                                    <div class="tableTbl-row">
+                                                        <div class="tableTbl-dataLft">Last Date</div>
+                                                        <div class="tableTbl-dataRgt">{x?.last_date}</div>
+                                                    </div>
+                                                    <div class="tableTbl-row">
+                                                        <div class="tableTbl-dataLft">Salary</div>
+                                                        <div class="tableTbl-dataRgt">{x?.salary}</div>
+                                                    </div>
+                                                    <div class="tableTbl-row">
+                                                        <div class="tableTbl-dataLft">Join our whatsapp group</div>
+                                                        <div class="tableTbl-dataRgt">Group Link here</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+                                    <div className="col-md-6">
+image will be here
+
+                                    </div>
                                 </div>
 
 
