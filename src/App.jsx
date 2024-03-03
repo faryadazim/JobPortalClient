@@ -79,119 +79,29 @@ function App() {
         <div className="section footer">
           <div className="container">
             <div className="row">
-              <div className="col-md-2 col-sm-12">
+              <div className="col-md-3 col-sm-12">
                 <div className="widget clearfix">
                   <div className="widget-title">
-                    <h4>Contact</h4>
+                    <h4>Services</h4>
                   </div>
                   {/* end widget-title */}
                   <div className="link-widget">
                     <ul className="check">
-                      <li><a href="#">Video Tutorials</a></li>
-                      <li><a href="#">Live Chat Support</a></li>
-                      <li><a href="#">Email Newsletter</a></li>
-                      <li><a href="#">Follow on Social</a></li>
-                      <li><a href="#">Subscribe to Youtube</a></li>
-                      <li><a href="#">Get In Touch</a></li>
-                      <li><a href="#">Support Forums</a></li>
-                      <li><a href="#">Submit a Ticket</a></li>
-                    </ul>
-                    {/* end check */}
-                  </div>
-                  {/* end link-widget */}
-                </div>
-              </div>
-              {/* end col */}
-              <div className="col-md-2 col-sm-12">
-                <div className="widget clearfix">
-                  <div className="widget-title">
-                    <h4>Network</h4>
-                  </div>
-                  {/* end widget-title */}
-                  <div className="link-widget">
-                    <ul className="check">
-                      <li><a href="job-search.html">Job Search</a></li>
-                      <li><a href="job-search-map.html">Job Search Map</a></li>
-                      <li><a href="job-add.html">Add a Job</a></li>
-                      <li>
-                        <a href="employer-dashboard.html">Employer Dashboard</a>
-                      </li>
-                      <li>
-                        <a href="employer-listing.html">Employer Listing</a>
-                      </li>
-                      <li>
-                        <a href="employer-edit-profile.html">Employer Edit Profile</a>
-                      </li>
-                      <li>
-                        <a href="freelancer-profile.html">Freelancer Profile</a>
-                      </li>
-                      <li>
-                        <a href="freelancer-search.html">Freelancer Search</a>
-                      </li>
-                      <li>
-                        <a href="freelancer-search-map.html">Freelancer Search Map</a>
-                      </li>
-                      <li>
-                        <a href="freelancer-add-resume.html">Add a Resume / CV</a>
-                      </li>
-                    </ul>
-                    {/* end check */}
-                  </div>
-                  {/* end link-widget */}
-                </div>
-              </div>
-              {/* end col */}
-              <div className="col-md-2 col-sm-12">
-                <div className="widget clearfix">
-                  <div className="widget-title">
-                    <h4>Our Pages</h4>
-                  </div>
-                  {/* end widget-title */}
-                  <div className="link-widget">
-                    <ul className="check">
-                      <li><a href="page-about.html">About us</a></li>
-                      <li><a href="page-services.html">Custom Services</a></li>
-                      <li><a href="shop.html">Shop Page</a></li>
-                      <li><a href="shop-single.html">Shop Single</a></li>
-                      <li><a href="shop-single-alt.html">Shop Single Alt</a></li>
-                      <li><a href="shop-cart.html">Shop Cart</a></li>
-                      <li><a href="shop-checkout.html">Shop Checkout</a></li>
-                      <li><a href="page-pricing.html">Plans &amp; Pricing</a></li>
-                      <li><a href="page-testimonial.html">Testimonials</a></li>
-                    </ul>
-                    {/* end check */}
-                  </div>
-                  {/* end link-widget */}
-                </div>
-              </div>
-              {/* end col */}
-              <div className="col-md-2 col-sm-12">
-                <div className="widget clearfix">
-                  <div className="widget-title">
-                    <h4>Company</h4>
-                  </div>
-                  {/* end widget-title */}
-                  <div className="link-widget">
-                    <ul className="check">
-                      <li><a href="#">About YourJob</a></li>
                       <li><a href="#">Contact Us</a></li>
-                      <li><a href="#">Our Team Members</a></li>
-                      <li><a href="#">Worldwide Offices</a></li>
-                      <li><a href="#">Worldwide Meet Up</a></li>
-                      <li><a href="#">Awards &amp; Reviews</a></li>
-                      <li><a href="#">YourJob in Press</a></li>
-                      <li><a href="#">Carrers</a></li>
-                      <li><a href="#">User Guide</a></li>
-                      <li><a href="#">Knowledgebase</a></li>
-                      <li><a href="#">Affiliate</a></li>
+                      <li><a href="#">About Us</a></li>
+                      <li><a href="#">Home Page</a></li>
+                      <li><a href="#">Whatsapp group link</a></li>
+                      <li><a href="#">Facebook group link</a></li>
+                      
                     </ul>
                     {/* end check */}
                   </div>
                   {/* end link-widget */}
                 </div>
               </div>
+        
               {/* end col */}
-              <div className="col-md-4 col-sm-12">
+              <div className="col-md-9 col-sm-12">
                 <div className="widget clearfix">
                   <div className="widget-title">
                     {/* <img className="flogo" src={Flogo} alt /> */}
@@ -199,9 +109,7 @@ function App() {
                   {/* end widget-title */}
                   <div className="text-widget">
                     <p>
-                      This is a professional responsive HTML5 job listing, job
-                      board and freelancer website template. This template
-                      available only Envato marketplace!
+                    Career Gateway: Your portal to endless job opportunities. Find, apply, and succeed in your dream career journey today!
                     </p>
                     <ul className="list-inline social-small">
                       <li>

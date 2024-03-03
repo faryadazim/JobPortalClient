@@ -15,7 +15,7 @@ const Jobs = () => {
         setIsLoading(true)
         let config = {
             method: 'get',
-            url: `http://localhost:3000/job?page=${currentPage + 1}&size=7`
+            url: `https://job-portal-server-nine.vercel.app/job?page=${currentPage + 1}&size=7`
         };
 
         axios.request(config)

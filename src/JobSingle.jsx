@@ -15,7 +15,7 @@ const JobSingle = () => {
 
         let config = {
             method: 'get',
-            url: `http://localhost:3000/job/${id}`
+            url: `https://job-portal-server-nine.vercel.app/job/${id}`
         };
 
         axios.request(config)
@@ -159,13 +159,12 @@ image will be here
                     </div>  */}
 
 
-
-                                <hr className="singlejobhr" />
-                                <div className="row">
+ 
+                                <div className="row ">
                                     <div className="content col-md-12">
                                         <div className="post-single-job">
                                             <div className="single-content">
-                                                <h4 className="small-title">{x?.post_name}</h4>
+                                                <h4 className="small-title" style={{marginTop:"20px"}}>{x?.post_name}</h4>
                                                 <p className="lead">{x?.description_2}</p>
 
                                                 {
