@@ -49,9 +49,9 @@ const JobSingle = () => {
                                 <div className="row">
                                     <div className="col-md-4 col-sm-3 col-xs-12">
                                         <div className="post-media">
-                                            <Link className="navbar-brand" to="/">
-                                                <img src={"https://psdconverthtml.com/live/yourjob/yourjob-v1/upload/job_02.jpg"} alt className="img-responsive img-thumbnail" />
-                                            </Link>
+                                            {/* <Link className="navbar-brand" to="/"> */}
+                                                <img src={x?.image_1} alt className="img-responsive img-thumbnail" style={{height:"300px"}}/>
+                                            {/* </Link> */}
 
                                         </div>
                                     </div>
@@ -64,10 +64,10 @@ const JobSingle = () => {
                                         <hr className="invis" />
                                         <p>{x?.description_1}</p>
                                         {
-                                            x?.is_apply_link && <a href="#contactmodal" role="button" data-toggle="modal" className="btn btn-primary btn-custom " style={{ marginRight: "5px" }}>Apple For Job</a>
+                                            x?.is_apply_link && <a href={x?.apply_link} role="button" data-toggle="modal" className="btn btn-primary btn-custom " style={{ marginRight: "5px" }}>Apple For Job</a>
                                         }
                                         {
-                                            x?.is_form_available && <a href="#contactmodal" role="button" data-toggle="modal" className="btn btn-primary btn-custom">Download Form</a>
+                                            x?.is_form_available && <a href={x?.form_availableLink}   data-toggle="modal" className="btn btn-primary btn-custom">Download Form</a>
                                         }
                                     </div>{/* end col */}
                                     <div className="col-md-2 col-sm-2 col-xs-12">
@@ -91,7 +91,7 @@ const JobSingle = () => {
 
                                             <div class="tableTbl">
                                                 <div class="tableTbl-header">
-                                                    <div class="header__itemTbl" ><a id="name" class="filter__linkTbl text-center" style={{textAlign:"center"}}>Important Point | Qualification</a></div>
+                                                    <div class="header__itemTbl" ><a id="name" class="filter__linkTbl text-center" style={{ textAlign: "center" }}>Important Point | Qualification</a></div>
                                                 </div>
                                                 <div class="tableTbl-content">
                                                     <div class="tableTbl-row">
@@ -147,8 +147,8 @@ const JobSingle = () => {
 
                                     </div>
                                     <div className="col-md-6">
-image will be here
-
+                                    <img src={x?.image_1} alt className="img-responsive img-thumbnail" />
+                                           
                                     </div>
                                 </div>
 
@@ -159,12 +159,12 @@ image will be here
                     </div>  */}
 
 
- 
+
                                 <div className="row ">
                                     <div className="content col-md-12">
                                         <div className="post-single-job">
                                             <div className="single-content">
-                                                <h4 className="small-title" style={{marginTop:"20px"}}>{x?.post_name}</h4>
+                                                <h4 className="small-title" style={{ marginTop: "20px" }}>{x?.post_name}</h4>
                                                 <p className="lead">{x?.description_2}</p>
 
                                                 {
