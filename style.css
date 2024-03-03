@@ -4117,3 +4117,80 @@ blockquote {
         -moz-transform: scale(1);
     }
 }
+
+
+
+/* Single Job Table */
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700');
+  
+ .containerTbl {
+	 max-width: 1000px;
+	 margin-right: auto;
+	 margin-left: auto;
+	 display: flex;
+	 justify-content: center;
+	 align-items: center; 
+}
+ .tableTbl {
+	 width: 100%;
+	 border: 1px solid #eee;
+}
+ .tableTbl-header {
+	 display: flex;
+	 width: 100%;
+	 background: #000;
+	 padding: 18px 0;
+   align-items: center;
+   text-align: center;
+}
+ .tableTbl-row {
+	 display: flex;
+	 width: 100%;
+	 padding: 18px 0;
+}
+ .tableTbl-row:nth-of-type(odd) {
+	 background: #eee;
+}
+ .tableTbl-dataLft {
+	 flex: 1 1 20%;
+   color: #000;
+	 text-align: left;
+   padding-left: 15px;
+  }
+  .tableTbl-dataRgt {
+    flex: 1 1 20%;
+    color: #000;
+    text-align: right;
+    padding-right: 15px;
+}
+ .header__itemTbl {
+  flex: 1 1 20%;
+  color: #000;
+	 text-transform: uppercase;
+}
+ .filter__linkTbl {
+	 color: white;
+   align-items: center;
+   text-align: center;
+	 text-decoration: none;
+	 position: relative;
+	 display: inline-block;
+	 padding-left: 2px;
+	 padding-right: 2px; 
+}
+ .filter__linkTbl::after {
+	 content: '';
+	 position: absolute;
+	 right: -18px;
+	 color: white;
+	 font-size: 12px;
+	 /* top: 50%; */
+	 transform: translateY(-50%);
+}
+ .filter__linkTbl.desc::after {
+	 content: '(desc)';
+}
+ .filter__linkTbl.asc::after {
+	 content: '(asc)';
+}
+ 

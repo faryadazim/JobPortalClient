@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { useParams, Link } from 'react-router-dom'
-import './Jobtable.css'
 import axios from 'axios'
 import { formatDate } from './utilities'
+// import './Jobtable.css'
 import Loader from './Loader'
 
 const JobSingle = () => {
