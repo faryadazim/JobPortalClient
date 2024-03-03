@@ -58,7 +58,8 @@ const Jobs = () => {
                                                 <div className="row">
                                                     <div className="col-md-2 col-sm-2 col-xs-12">
                                                         <div className="post-media">
-                                                            <a href="job-single.html"><img src={Job} alt className="img-responsive img-thumbnail" /></a>
+                                                            <Link className="navbar-brand" to={`job/${x?._id}`} >
+                                                                <img src={Job} alt className="img-responsive img-thumbnail" /></Link>
                                                         </div>
                                                         {/* end media */}
                                                     </div>
@@ -66,7 +67,9 @@ const Jobs = () => {
                                                     <div className="col-md-6 col-sm-6 col-xs-12">
                                                         <div className="badge freelancer-badge">{x?.type ? x?.type : 'NEW'}</div>
                                                         <h3>
-                                                            <a href="job-single.html" title>{x?.job_name}</a>
+                                                            <Link className="navbar-brand" to={`job/${x?._id}`} >
+
+                                                                {x?.job_name}</Link>
                                                         </h3>
                                                         <small>
                                                             {/* <span>Publisher : <a href="#">Amanda Sun</a></span> */}

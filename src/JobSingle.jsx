@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, Link } from 'react-router-dom'
 import './JobTable.css'
 import axios from 'axios'
 import { formatDate } from './utilities'
+import Loader from './Loader'
 
 const JobSingle = () => {
     const [x, setX] = useState({})
-    const {id    } = useParams();
+    const { id } = useParams();
     const [isLoading, setIsLoading] = useState(true);
- 
+
 
     const fetchDataSingle = () => {
 
@@ -19,6 +20,7 @@ const JobSingle = () => {
 
         axios.request(config)
             .then((response) => {
+                console.log(response.data, "data is here")
                 setX(response.data)
                 setIsLoading(false)
             })
@@ -28,14 +30,14 @@ const JobSingle = () => {
 
     }
 
-    useEffect(() => { 
+    useEffect(() => {
         fetchDataSingle()
     }, [])
 
     return (
         <>
             {
-                isLoading ? <>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aperiam ut excepturi non quia, laboriosam at tempore nam doloribus enim rerum perferendis aliquam esse quidem expedita autem? Aspernatur alias possimus voluptatibus.</>
+                isLoading ? <><Loader /></>
                     : <>
 
                         <div className="section wb">
@@ -47,26 +49,32 @@ const JobSingle = () => {
                                 <div className="row">
                                     <div className="col-md-4 col-sm-3 col-xs-12">
                                         <div className="post-media">
-                                            <a href="job-single.html"><img src={"https://psdconverthtml.com/live/yourjob/yourjob-v1/upload/job_02.jpg"} alt className="img-responsive img-thumbnail" /></a>
+                                            <Link className="navbar-brand" to="/">
+                                                <img src={"https://psdconverthtml.com/live/yourjob/yourjob-v1/upload/job_02.jpg"} alt className="img-responsive img-thumbnail" />
+                                            </Link>
 
                                         </div>
                                     </div>
                                     <div className="col-md-6 col-sm-7 col-xs-12">
                                         <div className="badge freelancer-badge">{x?.type ? x?.type : 'NEW'}</div>
-                                        <h3><a href="job-single.html" title>{x?.job_name}</a></h3>
+                                        <h3>{x?.job_name}</h3>
                                         <small>
                                             <span>In : <a href="#">{x?.department}</a></span>
                                             <span>Last Date : {formatDate(x.last_date)}</span>    </small>
                                         <hr className="invis" />
-                                        <p>Lorem Ipsum has been the industry's standard dummy text ever since the, when an unknown printer took a galley of type and scrambled it to make a type standard specimen book.</p>
-                                        <a href="#contactmodal" role="button" data-toggle="modal" className="btn btn-primary btn-custom">Apple For Job</a>
+                                        <p>{x?.description_1}</p>
+                                        {
+                                            x?.is_apply_link && <a href="#contactmodal" role="button" data-toggle="modal" className="btn btn-primary btn-custom " style={{ marginRight: "5px" }}>Apple For Job</a>
+                                        }
+                                        {
+                                            x?.is_form_available && <a href="#contactmodal" role="button" data-toggle="modal" className="btn btn-primary btn-custom">Download Form</a>
+                                        }
                                     </div>{/* end col */}
                                     <div className="col-md-2 col-sm-2 col-xs-12">
                                         <div className="job-meta m45">
-                                            <p>Employer</p>
-                                            <small>PCH Company</small>
+                                            <p>{x?.company_name}</p>
+                                            {x?.department && <small>{x.department}</small>}
                                             <ul className="company-links clearfix">
-                                                <li><a href="#"><i className="fa fa-link" /> Website</a></li>
                                                 <li><a href="#"><i className="fa fa-google-plus" /> Google+</a></li>
                                                 <li><a href="#"><i className="fa fa-twitter" /> Twitter</a></li>
                                                 <li><a href="#"><i className="fa fa-facebook" /> Facebook</a></li>
@@ -144,41 +152,17 @@ const JobSingle = () => {
                                     <div className="content col-md-12">
                                         <div className="post-single-job">
                                             <div className="single-content">
-                                                <h4 className="small-title">What I am Looking?</h4>
-                                                <p className="lead">100% Result Till now  with 5/5 rating with Preferred Freelancer chosen by Freelancer itself..</p>
-                                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-                                                <p>Rremaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-                                                <div className="row">
-                                                    <div className="col-md-4">
-                                                        <h5 className="small-title">Job Features &amp; Overviews</h5>
-                                                        <ul className="customlist">
-                                                            <li>WordPress Expert</li>
-                                                            <li>Opencart listed Partner </li>
-                                                            <li>Magento Certified</li>
-                                                            <li>Php Larvel ,Zend Framework</li>
-                                                            <li>Certified Social Engine</li>
-                                                            <li>Prestashop , CS cart and Drupal,  ZenCart developer</li>
-                                                        </ul>
-                                                    </div>
-                                                    <div className="col-md-4">
-                                                        <h5 className="small-title">Experience Requirements</h5>
-                                                        <ul className="customlist">
-                                                            <li>PSD TO HTML5 (  Elite author in themeforest)</li>
-                                                            <li>Great experience with Linux, Server Optimizing, Failover Clustering, Security, Virtualization know common used utilites, scripts and services such as Apache, PHP, MySQL, Nginx and many others.</li>
-                                                            <li>Donec venenatis ante a imperdiet maximus. Sed in justo porta, rutrum velit non, blandit lorem.</li>
-                                                            <li>Aenean pretium tortor eget nisl accumsan posuere. Aliquam congue metus eget quam scelerisque rhoncus.</li>
-                                                            <li>Donec vestibulum lectus a nisi vestibulum, sed vehicula est finibus. Proin facilisis tortor sed leo suscipit, quis pellentesque dui luctus.</li>
-                                                        </ul>
-                                                    </div>
-                                                    <div className="col-md-4">
-                                                        <h5 className="small-title">Education Requirements</h5>
-                                                        <ul className="customlist">
-                                                            <li>Donec venenatis ante a imperdiet maximus. Sed in justo porta, rutrum velit non, blandit lorem.</li>
-                                                            <li>Aliquam congue metus eget quam scelerisque rhoncus.</li>
-                                                            <li>Proin facilisis tortor sed leo suscipit, quis pellentesque dui luctus.</li>
-                                                        </ul>
-                                                    </div>
-                                                </div>{/* end row */}
+                                                <h4 className="small-title">{x?.post_name}</h4>
+                                                <p className="lead">{x?.description_2}</p>
+
+                                                {
+                                                    x?.is_how_to_apply && <>
+                                                        <h4 className="small-title">How to Apply</h4>
+                                                        <p className="lead">{x?.how_to_apply}</p>
+                                                        {x?.is_apply_link && <Link />}
+                                                    </>
+                                                }
+
                                             </div>
                                         </div>{/* end post-padding */}
                                     </div>
