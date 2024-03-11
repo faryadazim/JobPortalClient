@@ -8,10 +8,10 @@ const Home = () => {
                     <div className="col-md-7" style={{maxHeight:"240px"}}>
                         <div className="home-message">
                             <h1>
-                                A Powerful Website Template
+                            A way toward your Growth Career success
                             </h1>
                             <p>
-                                We're among one of the best Job Listing Bootstrap
+                            Explore Opportunities in Government and Private Sectors!
                             </p>
                             <div className="svg-wrapper">
                                 <div className="ttext">

@@ -1,3 +1,4 @@
+
 export const endPoint = "https://job-portal-server-nine.vercel.app";
 export const JobCategories = [
   { label: "ASF", value: "ASF" },
@@ -7,4 +8,4 @@ export const JobCategories = [
   { label: "ARMY", value: "ARMY" },
   { label: "Navy", value: "Navy" },
   { label: "Eligibility Criteria", value: "EligibilityCriteria" },
-];
+]; 

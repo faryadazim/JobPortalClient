@@ -4,6 +4,16 @@ import Logo from './images/logo.png'
 // import Flogo from './images/flogo.png' 
 import { Outlet, Link } from "react-router-dom"; 
 import { JobCategories } from './constraint';
+import { Outlet, Link } from "react-router-dom";
+import Loader from './Loader'
+import Home from './routes/Home'
+import { JobCategories } from './constraint'
+import { FaFacebookF } from "react-icons/fa";
+import { FaInstagram } from "react-icons/fa";
+import { FaTwitter } from "react-icons/fa";
+import { FaLinkedinIn } from "react-icons/fa";
+import { FaGooglePlusG } from "react-icons/fa";
+import { FaWhatsapp } from "react-icons/fa";
 function App() {
   const [count, setCount] = useState(0)
   // const [currentPage, setCurrentPage] = useState("/")
@@ -37,7 +47,6 @@ function App() {
                     }
 
 
-                    <li><a href="page-contact.html">Supportss</a></li>
                   </ul>
                   <ul className="nav navbar-nav navbar-right ">
                     {/* <li>
@@ -65,8 +74,8 @@ function App() {
               </> : <></>
         } */}
 
-       
-        <Outlet /> 
+
+        <Outlet />
 
         {/* end section */}
 
@@ -93,14 +102,14 @@ function App() {
                       <li><a href="#">Home Page</a></li>
                       <li><a href="#">Whatsapp group link</a></li>
                       <li><a href="#">Facebook group link</a></li>
-                      
+
                     </ul>
                     {/* end check */}
                   </div>
                   {/* end link-widget */}
                 </div>
               </div>
-        
+
               {/* end col */}
               <div className="col-md-9 col-sm-12">
                 <div className="widget clearfix">
@@ -110,7 +119,7 @@ function App() {
                   {/* end widget-title */}
                   <div className="text-widget">
                     <p>
-                    Career Gateway: Your portal to endless job opportunities. Find, apply, and succeed in your dream career journey today!
+                      Career Gateway: Your portal to endless job opportunities. Find, apply, and succeed in your dream career journey today!
                     </p>
                     <ul className="list-inline social-small">
                       <li className='social-media-icon facebook'>
@@ -143,6 +152,16 @@ function App() {
                           <FaWhatsapp />
                         </a>
                       </li>
+                           <li className='social-media-icon facebook'>
+                        <FaTwitter /> </li>
+                           <li className='social-media-icon facebook'>
+                        <FaInstagram /> </li>
+                           <li className='social-media-icon facebook'>
+                        <FaLinkedinIn />   </li>
+                           <li className='social-media-icon facebook'>
+                        <FaGooglePlusG />   </li>
+                           <li className='social-media-icon facebook'>
+                        <FaWhatsapp /> </li>
                     </ul>
 
                   </div>
