@@ -4,9 +4,9 @@ import Loader from '../Loader'
 import axios from 'axios'
 import Home from './Home'
 import { Link, useParams } from 'react-router-dom'
-import { formatDate, truncateString } from '../utilities'
+import { formatDate, truncateString } from '../utilities' 
 import { JobCategories, endPoint } from '../constraint'
-import Spinner from '../Spinner'
+import Spinner from '../Spinner'  
 
 const JobsListing = () => {
 
@@ -14,7 +14,7 @@ const JobsListing = () => {
     const [currentPage, setCurrentPage] = useState(1)
     const [isLoading, setIsLoading] = useState(true);
     const [totalPages, setTotalPages] = useState(1);
-
+ 
     const { categorySlug } = useParams();
     const category = categorySlug == null ? "-1" : categorySlug;
     const headLabel = categorySlug == null ? "Featured Jobs" : JobCategories.find(x => x.value == categorySlug).label
@@ -24,6 +24,7 @@ const JobsListing = () => {
         let config = {
             method: 'get',
             url: `${endPoint}/job?page=${currentPage}&size=8&category=${category}&search=-1`
+ 
         };
 
         axios.request(config)
@@ -61,17 +62,15 @@ const JobsListing = () => {
 
         <div className="section lb d-none">
             <div className="container">
-                <div className="section-title text-center clearfix">
-                    <h4>{headLabel}</h4>
+                <div className="section-title text-center clearfix">    <h4>{headLabel}</h4>
                     <hr />
                     {category == null && <p className="lead">
                         Find Pakistan Latest job | Govt and Private
-                    </p>}
-                </div>
+                    </p>}     </div>
                 <div className="all-jobs job-listing clearfix">
                     {
                         isLoading ? <> <Loader /> </> :
-                            <>
+                            <> 
                                 {
                                 jobData.length > 0 && <div className="job-title hidden-sm hidden-xs"><h5>Featured</h5></div>
                                 }
@@ -79,7 +78,7 @@ const JobsListing = () => {
 
                                 <div  >
                                     {
-                                        jobData.length > 0 && jobData?.map((x, index) => {
+                                        jobData.length > 0 && jobData?.map((x, index) => { 
                                             return <div className="col-md-6 double-job double-job-border-side" key={index}>
                                                 <div className="row">
                                                     <div className="  col-sm-10  " style={{ padding: "0px 3px" }} >
@@ -111,7 +110,7 @@ const JobsListing = () => {
                             </>
                     }
                 </div>
-                {/* end alljobs */}
+                {/* end alljobs */} 
                 {jobData.length == 0 && <p>No positions available at the moment. Please stay updated or explore alternative categories. Thank you.</p>}
                 {jobData.length > 0 && <nav aria-label="Page navigation" style={{ display: "flex", justifyContent: "right" }}>
                     <ul className="pagination ">
@@ -142,14 +141,13 @@ const JobsListing = () => {
 
                 {/* <div className="loadmorebutton text-center clearfix d-flex  justify-content-end"> */}
                 {/* <div>
-
+=======
+                <div className="loadmorebutton text-center clearfix d-flex  justify-content-end">
+                    <div> 
                         <button onClick={() => handlePrevPage()} disabled={currentPage === 1} className='btn-custom-navigation' style={{ marginRight: "15px" }}>Previous</button>
                         <span>{currentPage} of {totalPages}</span>
                         <button onClick={() => handleNextPage()} disabled={currentPage === totalPages} className='btn-custom-navigation ' style={{ marginLeft: "15px" }}>Next</button>
-                    </div> */}
-                {/* <button className="btn btn-primary" id="loadMore" onClick={() => fetchData()}>Load More Jobs</button> */}
-                {/* </div> */}
-                {/* end loadmore */}
+      {/* end loadmore */}
             </div>
             {/* end container */}
         </div>

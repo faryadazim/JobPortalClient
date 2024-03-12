@@ -29,22 +29,28 @@ function App() {
                     <span className="icon-bar" />
                   </button>
                   <Link className="navbar-brand" to="/">
-                    <img src={Logo} className="img-responsive" /></Link>
+                    <img src={Logo} className="img-responsive" style={{ height: "50px" }} /></Link>
                 </div>
                 {/* end navbar header */}
                 <div id="navbar" className="navbar-collapse collapse">
                   <ul className="nav navbar-nav">
-                    <li><a href="index.html">Home</a></li>
+                    {
+                      JobCategories.map((x) => {
+                        return <li style={{ fontWeight: "900" }}><Link   to={`category/${x.value}`}>{x.label}</Link></li>
+                      })
+
+                    }
+
 
                     <li><a href="page-contact.html">Supportss</a></li>
                   </ul>
                   <ul className="nav navbar-nav navbar-right ">
-                    <li>
+                    {/* <li>
                       <a role="button" onClick={() => {
 
                         setCurrentPage("login")
                       }} >Sign in</a>
-                    </li>
+                    </li> */}
                     {/* <li >
                       <a className="btn btn-primary"  onClick={() => setCurrentPage("login")}>Submit Job</a>
                     </li> */}
@@ -87,7 +93,7 @@ function App() {
                   {/* end widget-title */}
                   <div className="link-widget">
                     <ul className="check">
-                      <li><a href="#">Contact Us</a></li>
+                      <li><a href="/facebook.com">Contact Us</a></li>
                       <li><a href="#">About Us</a></li>
                       <li><a href="#">Home Page</a></li>
                       <li><a href="#">Whatsapp group link</a></li>
@@ -112,23 +118,35 @@ function App() {
                     Career Gateway: Your portal to endless job opportunities. Find, apply, and succeed in your dream career journey today!
                     </p>
                     <ul className="list-inline social-small">
-                      <li>
-                        <a href="#"><i className="fa fa-facebook" /></a>
+                      <li className='social-media-icon facebook'>
+                        <a href="https://www.facebook.com/profile.php?id=61557058526797&mibextid=PtKPJ9/" target="_blank" style={{ color: "white" }}>
+                          <FaFacebookF />
+                        </a>
                       </li>
-                      <li>
-                        <a href="#"><i className="fa fa-twitter" /></a>
+                      <li className='social-media-icon twitter'>
+                        <a href="https://www.instagram.com/careergateway888/" target="_blank" style={{ color: "white" }}>
+                          <FaTwitter />
+                        </a>
                       </li>
-                      <li>
-                        <a href="#"><i className="fa fa-google-plus" /></a>
+                      <li className='social-media-icon google'>
+                        <a href="https://www.instagram.com/careergateway888/" target="_blank" style={{ color: "white" }}>
+                          <FaInstagram />
+                        </a>
                       </li>
-                      <li>
-                        <a href="#"><i className="fa fa-linkedin" /></a>
+                      <li className='social-media-icon linkedin'>
+                        <a href="http://www.linkedin.com/in/career-gateway-7c5a6r0e5er" target="_blank" style={{ color: "white" }}>
+                          <FaLinkedinIn />
+                        </a>
                       </li>
-                      <li>
-                        <a href="#"><i className="fa fa-pinterest" /></a>
-                      </li>
-                      <li>
-                        <a href="#"><i className="fa fa-rss" /></a>
+                      {/* <li className='social-media-icon facebook'>
+                        <a href="https://www.instagram.com/careergateway888/" target="_blank" style={{ color: "white" }}>
+                          <FaGooglePlusG />
+                        </a>
+                      </li> */}
+                      <li className='social-media-icon whatsapp'>
+                        <a href="https://www.instagram.com/careergateway888/" target="_blank" style={{ color: "white" }}>
+                          <FaWhatsapp />
+                        </a>
                       </li>
                     </ul>
 

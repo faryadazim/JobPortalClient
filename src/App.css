@@ -87,21 +87,3 @@
  
     border-right: 1px solid #e9ecef;
 }
-
-
-
-.PageStatusShower{
-    background-color: #fff;
-    border: 1px solid #ededed;
-    border-radius: 0 !important;
-    color: #18293b !important;
-    float: left;
-    line-height: 1.42857;
-    margin-left: -1px;
-    margin-right: 5px;
-    padding: 10px 16px;
-    position: relative;
-    text-decoration: none;
-    width: 150px;
-    text-align: center;
-} 

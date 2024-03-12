@@ -5,7 +5,7 @@ const Home = () => {
         <div className="parallax section homehero  d-none" data-stellar-background-ratio="0.5" style={{ backgroundImage: 'url("demo.jpg")', backgroundPosition: '0px -24px' }}>
             <div className="container">
                 <div className="row">
-                    <div className="col-md-7">
+                    <div className="col-md-7" style={{maxHeight:"240px"}}>
                         <div className="home-message">
                             <h1>
                                 A Powerful Website Template
