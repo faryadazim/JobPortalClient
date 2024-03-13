@@ -11,6 +11,7 @@ import {
 import ErrorPage from './error-page.jsx'
 import Jobs from './routes/Jobs' 
 import JobSingle from './JobSingle'
+import JobsListing from './routes/JobsListing.jsx'
 // import Other from './Other.jsx'
 
 
@@ -23,14 +24,16 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: < Jobs />,
-      }, {
-        path:"/job/:id",
-        element:<JobSingle/> 
-      },
-       {
-        path:"/category/:categorySlug",
-        element: <JobsListing/>, 
       }
+      // , {
+      //   path:"/job/:id",
+      //   element:<JobSingle/> 
+      // }
+      // ,
+      //  {
+      //   path:"/category/:categorySlug",
+      //   element: <JobsListing/>, 
+      // }
     ],
   },
  
