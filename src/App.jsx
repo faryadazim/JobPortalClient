@@ -1,14 +1,9 @@
-import { useState, useEffect } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { useState, useEffect } from 'react' 
 import './App.css'
-import Logo from './images/logo.png'
-import Job from './images/job_06.jpg'
-import axios from 'axios'
+import Logo from './images/logo.png'    
 // import Flogo from './images/flogo.png' 
-import { Outlet, Link } from "react-router-dom";
-import Loader from './Loader'
-import Home from './routes/Home'
+import { Outlet, Link } from "react-router-dom"; 
+import { JobCategories } from './constraint';
 function App() {
   const [count, setCount] = useState(0)
   // const [currentPage, setCurrentPage] = useState("/")

@@ -1,12 +1,9 @@
-import React, { useState, useEffect } from 'react'
-import Job from '../images/job_06.jpg'
+import React, { useState, useEffect } from 'react' 
 import Loader from '../Loader'
-import axios from 'axios'
-import Home from './Home'
+import axios from 'axios' 
 import { Link, useParams } from 'react-router-dom'
 import { formatDate, truncateString } from '../utilities' 
-import { JobCategories, endPoint } from '../constraint'
-import Spinner from '../Spinner'  
+import { JobCategories, endPoint } from '../constraint' 
 
 const JobsListing = () => {
 
