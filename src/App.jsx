@@ -2,9 +2,7 @@ import { useState, useEffect } from 'react'
 import './App.css'
 import Logo from './images/logo.png'    
 // import Flogo from './images/flogo.png' 
-import { Outlet, Link } from "react-router-dom"; 
-import { JobCategories } from './constraint';
-import { Outlet, Link } from "react-router-dom";
+import { Outlet, Link } from "react-router-dom";   
 import Loader from './Loader'
 import Home from './routes/Home'
 import { JobCategories } from './constraint'
@@ -14,10 +12,8 @@ import { FaTwitter } from "react-icons/fa";
 import { FaLinkedinIn } from "react-icons/fa";
 import { FaGooglePlusG } from "react-icons/fa";
 import { FaWhatsapp } from "react-icons/fa";
-function App() {
-  const [count, setCount] = useState(0)
-  // const [currentPage, setCurrentPage] = useState("/")
-  const [currentPageInside, setCurrentPageInside] = useState("/logged")
+function App() { 
+  // const [currentPage, setCurrentPage] = useState("/") 
 
   return (
     <>
@@ -152,16 +148,7 @@ function App() {
                           <FaWhatsapp />
                         </a>
                       </li>
-                           <li className='social-media-icon facebook'>
-                        <FaTwitter /> </li>
-                           <li className='social-media-icon facebook'>
-                        <FaInstagram /> </li>
-                           <li className='social-media-icon facebook'>
-                        <FaLinkedinIn />   </li>
-                           <li className='social-media-icon facebook'>
-                        <FaGooglePlusG />   </li>
-                           <li className='social-media-icon facebook'>
-                        <FaWhatsapp /> </li>
+                           
                     </ul>
 
                   </div>

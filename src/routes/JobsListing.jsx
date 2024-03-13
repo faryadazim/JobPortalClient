@@ -51,9 +51,9 @@ const JobsListing = () => {
 
 
 
-    useEffect(() => {
+    useEffect(() => { 
         fetchData()
-    }, [currentPage])
+    }, [currentPage,categorySlug])
 
     return (
 
@@ -69,7 +69,7 @@ const JobsListing = () => {
                         isLoading ? <> <Loader /> </> :
                             <> 
                                 {
-                                jobData.length > 0 && <div className="job-title hidden-sm hidden-xs"><h5>Featured</h5></div>
+                                jobData.length > 0 && categorySlug==null && <div className="job-title hidden-sm hidden-xs"><h5>Featured</h5></div>
                                 }
 
 
@@ -123,7 +123,7 @@ const JobsListing = () => {
                         <li><a href="#">3</a></li>
                         <li><a href="#">4</a></li> */}
 
-                        <li    ><p className='PageStatusShower'>{currentPage} of {totalPages}</p></li>
+                        <li><p className='PageStatusShower'>{currentPage} of {totalPages}</p></li>
                         {/* {
                          Array.from(Array(totalPages), (e, i) => {
                             return    <li><a href="#" key={i}>{i+1}</a></li>
