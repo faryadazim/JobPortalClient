@@ -4,6 +4,7 @@ import axios from 'axios'
 import { formatDate } from './utilities'
 // import './Jobtable.css'
 import Loader from './Loader'
+import { endPoint } from './constraint'
 
 const JobSingle = () => {
     const [x, setX] = useState({})
@@ -15,7 +16,7 @@ const JobSingle = () => {
 
         let config = {
             method: 'get',
-            url: `https://job-portal-server-nine.vercel.app/job/${id}`
+            url: `${endPoint}/job/${id}`
         };
 
         axios.request(config)

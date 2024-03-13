@@ -79,7 +79,7 @@
 }
 
 .homehero {
-    padding: 3.5em 0 1em;
+    padding: 1.5em 0 1em;
 }
 
 .home-message h1 {
@@ -108,7 +108,8 @@
 
 .ttext {
     position: relative;
-    top: 64px
+    top: 64px;
+    padding-left:12px
 }
 
 .svg-wrapper:hover .shape {

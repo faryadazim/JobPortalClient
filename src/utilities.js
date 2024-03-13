@@ -11,3 +11,13 @@ export function formatDate(dateString) {
 
     return formattedDate;
 }
+
+
+export function truncateString(str) {
+    var required = 42;
+    if (str.length <= required) {
+        return str;
+    } else {
+        return str.substring(0, required-2) + '...';
+    }
+}

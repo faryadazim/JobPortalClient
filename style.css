@@ -324,7 +324,7 @@ small,
     font-size: 18px;
     height: auto;
     line-height: 1;
-    padding: 0 30px 0 15px;
+    padding: 0 30px 0 0px;
 }
 
 .navbar-brand.with-text {
@@ -3325,7 +3325,7 @@ hr.invis {
 }
 
 .badge {
-    margin-top: 20px;
+    /* margin-top: 20px; */
     border-radius: 3px;
     padding: 4px 16px;
 }
