@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import './index.css'
@@ -23,7 +23,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: < Jobs />,
+        element: < Jobs   />,
       },
        {
         path:"/job/:id",
@@ -31,17 +31,8 @@ const router = createBrowserRouter([
       },
        {
         path:"/category/:categorySlug",
-        element: <JobsListing/>,
-      }
-      // , {
-      //   path:"/job/:id",
-      //   element:<JobSingle/> 
-      // }
-      // ,
-      //  {
-      //   path:"/category/:categorySlug",
-      //   element: <JobsListing/>, 
-      // }
+        element: <JobsListing   />,
+      } 
     ],
   },
   

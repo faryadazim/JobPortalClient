@@ -14,7 +14,6 @@ import { FaGooglePlusG } from "react-icons/fa";
 import { FaWhatsapp } from "react-icons/fa";
 function App() { 
   // const [currentPage, setCurrentPage] = useState("/") 
-
   return (
     <>
       <div id="wrapper">
@@ -76,11 +75,7 @@ function App() {
         {/* end section */}
 
 
-
-        {/* now put herer job managememnt temprary */}
-
-
-
+ 
         {/* end section */}
         <div className="section footer">
           <div className="container">

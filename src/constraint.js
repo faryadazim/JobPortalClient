@@ -1,5 +1,5 @@
 
-export const endPoint = "https://job-portal-server-nine.vercel.app";
+export const endPoint = "http://localhost:3000";
 export const JobCategories = [
   { label: "ASF", value: "ASF" },
   { label: "ANF", value: "ANF" },
