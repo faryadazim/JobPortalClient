@@ -50,9 +50,8 @@ const JobSingle = () => {
                                 <div className="row">
                                     <div className="col-md-4 col-sm-3 col-xs-12">
                                         <div className="post-media">
-                                            <Link className="navbar-brand" to="/">
-                                                <img src={"https://psdconverthtml.com/live/yourjob/yourjob-v1/upload/job_02.jpg"} alt className="img-responsive img-thumbnail" />
-                                            </Link>
+                                        <img src={x.image_1} alt className="img-responsive img-thumbnail"  style={{width:"314px" }}/>
+                                          
 
                                         </div>
                                     </div>
@@ -148,7 +147,8 @@ const JobSingle = () => {
 
                                     </div>
                                     <div className="col-md-6">
-image will be here
+                                    <img src={x.image_1} alt className="" style={{width:"100%"}} />
+                                          
 
                                     </div>
                                 </div>

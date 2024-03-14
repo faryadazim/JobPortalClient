@@ -83,14 +83,14 @@ function App() {
               <div className="col-md-3 col-sm-12">
                 <div className="widget clearfix">
                   <div className="widget-title">
-                    <h4>Services</h4>
+                    <h4>Find Us</h4>
                   </div>
                   {/* end widget-title */}
                   <div className="link-widget">
                     <ul className="check">
-                      <li><a href="/facebook.com">Contact Us</a></li>
+                      {/* <li><a href="/facebook.com">Contact Us</a></li>
                       <li><a href="#">About Us</a></li>
-                      <li><a href="#">Home Page</a></li>
+                      <li><a href="#">Home Page</a></li> */}
                       <li><a href="#">Whatsapp group link</a></li>
                       <li><a href="#">Facebook group link</a></li>
 
