@@ -26,7 +26,7 @@ const Login = () => {
             .then((response) => {
               console.log((response.data));
 
-                localStorage.setItem('token ', response.data.token);
+                localStorage.setItem('token', response.data.token);
                 localStorage.setItem('email', response.data.result.email);
                 localStorage.setItem('userName', response.data.result.userName);
              

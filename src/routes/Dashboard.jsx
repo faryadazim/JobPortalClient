@@ -1,6 +1,7 @@
 import React from 'react'
 import { Outlet, Link, useNavigate } from "react-router-dom";
 import { endPoint } from '../constraint';
+import { capitalizeFirstLetter } from '../utilities';
 const Dashboard = () => {
 
     const navigate = useNavigate();
@@ -17,7 +18,7 @@ const Dashboard = () => {
                             <div className="heading-holder">
                                 <h1>Manage Jobs</h1>
                             </div>
-                            <p className="lead">Hello ${userName}, this is your private dashboard.</p>
+                            <p className="lead">Hello {capitalizeFirstLetter(userName)}, this is your private dashboard.</p>
                         </div>
                     </div>
                     {/* end container */}
@@ -30,8 +31,9 @@ const Dashboard = () => {
                                 <div className="post-padding clearfix">
                                     <ul className="nav nav-pills nav-stacked">
                                         <li>
-                                            <a href="employer-submit-job.html">  Submit a
-                                                Jobs</a>
+                                  
+                                        <Link to={"SubmitJobs"}> Submit a
+                                                Jobs</Link>
                                         </li>
 
                                         <li className="active">

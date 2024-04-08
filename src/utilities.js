@@ -12,6 +12,13 @@ export function formatDate(dateString) {
     return formattedDate;
 }
 
+export const formatDateForInputJob = (dateString) => {
+    const date = new Date(dateString);
+    const day = date.getDate().toString().padStart(2, '0');
+    const month = (date.getMonth() + 1).toString().padStart(2, '0');
+    const year = date.getFullYear();
+    return `${day}-${month}-${year}`;
+};
 
 export function truncateString(str) {
     var required = 42;
@@ -20,4 +27,9 @@ export function truncateString(str) {
     } else {
         return str.substring(0, required-2) + '...';
     }
+}
+
+
+export const capitalizeFirstLetter = (string) => {
+    return string.charAt(0).toUpperCase() + string.slice(1);
 }
