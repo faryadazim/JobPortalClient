@@ -10,9 +10,14 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import ErrorPage from './error-page.jsx'
-import Jobs from './routes/Jobs' 
+import Jobs from './routes/Jobs'
 import JobSingle from './JobSingle'
 import JobsListing from './routes/JobsListing.jsx'
+import Login from './routes/Login.jsx'
+import Dashboard from './routes/Dashboard.jsx'
+import ManageJobs from './routes/ManageJobs.jsx'
+import ChangePassword from './routes/ChangePassword.jsx'
+import SubmitJobs from './routes/sUBMITJobs.jsx'
 // import Other from './Other.jsx'
 
 
@@ -24,19 +29,41 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: < Jobs   />,
+        element: < Jobs />,
       },
-       {
-        path:"/job/:id",
-        element:<JobSingle/>
+      {
+        path: "/job/:id",
+        element: <JobSingle />
       },
-       {
-        path:"/category/:categorySlug",
-        element: <JobsListing   />,
-      } 
+      {
+        path: "/category/:categorySlug",
+        element: <JobsListing />,
+      },
+      {
+        path: "/admin",
+        element: <Login />,
+      },
+      {
+        path: "/dashboard",
+        element: <Dashboard />,
+        children: [
+          {
+            path: "manageJobs",
+            element: <ManageJobs />,
+          },
+          {
+            path: "changePassword",
+            element: <ChangePassword />,
+          },
+          {
+            path: "SubmitJobs",
+            element: <SubmitJobs />,
+          }
+        ]
+      }
     ],
   },
-  
+
 ]);
 
 

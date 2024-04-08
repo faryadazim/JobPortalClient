@@ -1,6 +1,44 @@
-import React from 'react'
+import React, { useState } from 'react'
+
+import {   useNavigate } from "react-router-dom";
+import { endPoint } from '../constraint';
+
+
+import axios from 'axios'
 
 const Login = () => {
+    const [userCredentials, setUserCredentials] = useState({ email: "", password: "" });
+
+
+    const navigate = useNavigate();
+    const LogginUser = () => {
+        let config = {
+            method: 'post',
+            maxBodyLength: Infinity,
+            url: `${endPoint}/user/login`,
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            data: JSON.stringify(userCredentials)
+        };
+
+        axios.request(config)
+            .then((response) => {
+              console.log((response.data));
+
+                localStorage.setItem('token ', response.data.token);
+                localStorage.setItem('email', response.data.result.email);
+                localStorage.setItem('userName', response.data.result.userName);
+             
+                navigate('/dashboard/manageJobs');
+            })
+            .catch((error) => {
+                alert("Invalid Credentials")
+                console.log(error);
+            });
+    }
+
+
     return (
         <>
             <div>
@@ -8,9 +46,10 @@ const Login = () => {
                     <div className="container">
                         <div className="page-title text-center">
                             <div className="heading-holder">
-                                <h1>Login &amp; Register</h1>
+                                <h1>Welcome to Career Growth</h1>
                             </div>
-                            <p className="lead">Hello there, this is your custom login page tagline message.</p>
+                            <p className="lead">Please enter your credentials to access the dashboard.</p>
+
                         </div>
                     </div>{/* end container */}
                 </div>{/* end section */}
@@ -22,20 +61,14 @@ const Login = () => {
                                     <h4>Login Account</h4>
                                     <div className="input-group">
                                         <span className="input-group-addon"><i className="fa fa-user" /></span>
-                                        <input type="text" className="form-control" placeholder="User name" />
+                                        <input type="text" className="form-control" placeholder="User name" onChange={(e) => setUserCredentials({ ...userCredentials, email: e.target.value })} />
                                     </div>
                                     <div className="input-group">
                                         <span className="input-group-addon"><i className="fa fa-lock" /></span>
-                                        <input type="text" className="form-control" placeholder="Password" />
+                                        <input type="password" className="form-control" placeholder="Password" onChange={(e) => setUserCredentials({ ...userCredentials, password: e.target.value })} />
                                     </div>
-                                    <button className="btn btn-custom" onClick={() => {
-                                        setCurrentPage("logged")
-                                        setCurrentPageInside("logged")
-                                    }}>Login Account</button>
-                                    <div className="checkbox checkbox-primary">
-                                        <input id="checkbox_qu_01" type="checkbox" className="styled" />
-                                        <label htmlFor="checkbox_qu_01"><small>Remember me</small></label>
-                                    </div>
+                                    <a role="button" data-toggle="modal" onClick={LogginUser} className="btn btn-primary btn-custom " style={{ paddingTop: "10px" }}>Login</a>
+
                                 </form>
                             </div>{/* end col */}
 

@@ -43,20 +43,7 @@ const JobsListing = ({ currentSectors, setCurrentSectors }) => {
 
 
  
-
-            const myHeaders = new Headers();
-            myHeaders.append("Authorization", "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiYWRtaW5AZ21haWwuY29tIiwianRpIjoiNTRmZTNhOGYtN2M2Ni00MjU4LTk0ZmMtNGU4NGRjNWYzMzE5IiwiVXNlcklkIjoiNWQ4Y2NiY2ItYjZjMC00YmJhLWE3OWEtZWVkMjUxZmMyMjg1IiwiZXhwIjoxNzExMzU1MjIwLCJpc3MiOiJodHRwczovL2xvY2FsaG9zdDo3MTE1IiwiYXVkIjoiaHR0cDovL2xvY2FsaG9zdDo3MTE1In0.Z__ATCplstVMNN3oIboV-g3L3H-BmrLFQIdI7zPXkG0");
-            
-            const requestOptions = {
-              method: "GET",
-              headers: myHeaders,
-              redirect: "follow"
-            };
-            
-            fetch("https://localhost:44368/api/v2/States/GetStates", requestOptions)
-              .then((response) => response.text())
-              .then((result) => console.log(result))
-              .catch((error) => console.error(error));
+ 
 
     }
 
