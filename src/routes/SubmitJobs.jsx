@@ -126,7 +126,7 @@ const SubmitJobs = () => {
                         <div className="col-md-12 col-sm-12">
                             <label className="control-label">Job Images <small>Please select images order Wise</small></label>
                             <div className="fileupload fileupload-new" data-provides="fileupload">
-                                {[1, 2, 3].map((index) => (
+                                {[1, 2, 3, 4, 5, 6, 7, 8, , 9, 10].map((index) => (
                                     <span key={index} className="btn btn-default btn-file" style={{ marginRight: "3px" }}>
                                         <span className="fileupload-new">Select Image {index}</span>
                                         <span className="fileupload-exists">Change</span>

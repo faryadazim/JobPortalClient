@@ -49,6 +49,8 @@ const Dashboard = () => {
                                         <li>
                                             <a onClick={() => {
                                                 localStorage.removeItem('token')
+                                                localStorage.removeItem('email')
+                                                localStorage.removeItem('userName')
                                                 navigate('/');
                                             }}>Logout</a>
                                         </li>
