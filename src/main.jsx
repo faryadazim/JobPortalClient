@@ -17,7 +17,7 @@ import Login from './routes/Login.jsx'
 import Dashboard from './routes/Dashboard.jsx'
 import ManageJobs from './routes/ManageJobs.jsx'
 import ChangePassword from './routes/ChangePassword.jsx'
-import SubmitJobs from './routes/sUBMITJobs.jsx'
+import SubmitJobs from './routes/SubmitJobs.jsx'
 // import Other from './Other.jsx'
 
 
