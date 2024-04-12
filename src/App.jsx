@@ -1,8 +1,8 @@
-import { useState, useEffect } from 'react' 
+import { useState, useEffect } from 'react'
 import './App.css'
-import Logo from './images/logo.png'    
+import Logo from './images/logo.png'
 // import Flogo from './images/flogo.png' 
-import { Outlet, Link } from "react-router-dom";   
+import { Outlet, Link } from "react-router-dom";
 import Loader from './Loader'
 import Home from './routes/Home'
 import { JobCategories } from './constraint'
@@ -12,9 +12,8 @@ import { FaTwitter } from "react-icons/fa";
 import { FaLinkedinIn } from "react-icons/fa";
 import { FaGooglePlusG } from "react-icons/fa";
 import { FaWhatsapp } from "react-icons/fa";
-function App() { 
+function App() {
   // const [currentPage, setCurrentPage] = useState("/") 
-
   return (
     <>
       <div id="wrapper">
@@ -37,7 +36,7 @@ function App() {
                   <ul className="nav navbar-nav">
                     {
                       JobCategories.map((x) => {
-                        return <li style={{ fontWeight: "900" }}><Link   to={`category/${x.value}`}>{x.label}</Link></li>
+                        return <li style={{ fontWeight: "900" }}><Link to={`category/${x.value}`}>{x.label}</Link></li>
                       })
 
                     }
@@ -77,46 +76,102 @@ function App() {
 
 
 
-        {/* now put herer job managememnt temprary */}
-
-
-
         {/* end section */}
         <div className="section footer">
           <div className="container">
             <div className="row">
-              <div className="col-md-3 col-sm-12">
+              <div className="col-md-2 col-sm-12">
                 <div className="widget clearfix">
                   <div className="widget-title">
-                    <h4>Services</h4>
-                  </div>
-                  {/* end widget-title */}
+                    <h4>Contact</h4>
+                  </div>{/* end widget-title */}
                   <div className="link-widget">
                     <ul className="check">
-                      <li><a href="/facebook.com">Contact Us</a></li>
-                      <li><a href="#">About Us</a></li>
-                      <li><a href="#">Home Page</a></li>
-                      <li><a href="#">Whatsapp group link</a></li>
-                      <li><a href="#">Facebook group link</a></li>
-
-                    </ul>
-                    {/* end check */}
-                  </div>
-                  {/* end link-widget */}
+                      <li><a href="#">Video Tutorials</a></li>
+                      <li><a href="#">Live Chat Support</a></li>
+                      <li><a href="#">Email Newsletter</a></li>
+                      <li><a href="#">Follow on Social</a></li>
+                      <li><a href="#">Subscribe to Youtube</a></li>
+                      <li><a href="#">Get In Touch</a></li>
+                      <li><a href="#">Support Forums</a></li>
+                      <li><a href="#">Submit a Ticket</a></li>
+                    </ul>{/* end check */}
+                  </div>{/* end link-widget */}
                 </div>
-              </div>
-
-              {/* end col */}
-              <div className="col-md-9 col-sm-12">
+              </div>{/* end col */}
+              <div className="col-md-2 col-sm-12">
                 <div className="widget clearfix">
                   <div className="widget-title">
-                    {/* <img className="flogo" src={Flogo} alt /> */}
-                  </div>
-                  {/* end widget-title */}
-                  <div className="text-widget">
-                    <p>
-                      Career Gateway: Your portal to endless job opportunities. Find, apply, and succeed in your dream career journey today!
-                    </p>
+                    <h4>Network</h4>
+                  </div>{/* end widget-title */}
+                  <div className="link-widget">
+                    <ul className="check">
+                      <li><a href="job-search.html">Job Search</a></li>
+                      <li><a href="job-search-map.html">Job Search Map</a></li>
+                      <li><a href="job-add.html">Add a Job</a></li>
+                      <li><a href="employer-dashboard.html">Employer Dashboard</a></li>
+                      <li><a href="employer-listing.html">Employer Listing</a></li>
+                      <li><a href="employer-edit-profile.html">Employer Edit Profile</a></li>
+                      <li><a href="freelancer-profile.html">Freelancer Profile</a></li>
+                      <li><a href="freelancer-search.html">Freelancer Search</a></li>
+                      <li><a href="freelancer-search-map.html">Freelancer Search Map</a></li>
+                      <li><a href="freelancer-add-resume.html">Add a Resume / CV</a></li>
+                    </ul>{/* end check */}
+                  </div>{/* end link-widget */}
+                </div>
+              </div>{/* end col */}
+              <div className="col-md-2 col-sm-12">
+                <div className="widget clearfix">
+                  <div className="widget-title">
+                    <h4>Our Pages</h4>
+                  </div>{/* end widget-title */}
+                  <div className="link-widget">
+                    <ul className="check">
+                      <li><a href="page-about.html">About us</a></li>
+                      <li><a href="page-services.html">Custom Services</a></li>
+                      <li><a href="shop.html">Shop Page</a></li>
+                      <li><a href="shop-single.html">Shop Single</a></li>
+                      <li><a href="shop-single-alt.html">Shop Single Alt</a></li>
+                      <li><a href="shop-cart.html">Shop Cart</a></li>
+                      <li><a href="shop-checkout.html">Shop Checkout</a></li>
+                      <li><a href="page-pricing.html">Plans &amp; Pricing</a></li>
+                      <li><a href="page-testimonial.html">Testimonials</a></li>
+                    </ul>{/* end check */}
+                  </div>{/* end link-widget */}
+                </div>
+              </div>{/* end col */}
+              <div className="col-md-2 col-sm-12">
+                <div className="widget clearfix">
+                  <div className="widget-title">
+                    <h4>Company</h4>
+                  </div>{/* end widget-title */}
+                  <div className="link-widget">
+                    <ul className="check">
+                      <li><a href="#">About YourJob</a></li>
+                      <li><a href="#">Contact Us</a></li>
+                      <li><a href="#">Our Team Members</a></li>
+                      <li><a href="#">Worldwide Offices</a></li>
+                      <li><a href="#">Worldwide Meet Up</a></li>
+                      <li><a href="#">Awards &amp; Reviews</a></li>
+                      <li><a href="#">YourJob in Press</a></li>
+                      <li><a href="#">Carrers</a></li>
+                      <li><a href="#">User Guide</a></li>
+                      <li><a href="#">Knowledgebase</a></li>
+                      <li><a href="#">Affiliate</a></li>
+                    </ul>{/* end check */}
+                  </div>{/* end link-widget */}
+                </div>
+              </div>{/* end col */}
+              <div className="col-md-4 col-sm-12">
+                <div className="widget clearfix">
+                  <div className="widget-title" style={{ backgroundColor:"white", height:"60px"  , borderRadius:"15px", display:"flex" , justifyContent:"center" , paddingTop:"5px"}}> 
+                    <Link className="navbar-brand" to="/">
+                      <img src={Logo}  className="img-responsive" style={{ height: "50px"  , backgroundColor:"white"}} />
+                    </Link>
+
+                  </div>{/* end widget-title */}
+                  <div className="text-widget " style={{marginTop:"5px"}}>
+                    <p>CareerGrowth: Bridging opportunities between Pakistan's public and private sectors, connecting job seekers with their ideal career paths seamlessly.</p>
                     <ul className="list-inline social-small">
                       <li className='social-media-icon facebook'>
                         <a href="https://www.facebook.com/profile.php?id=61557058526797&mibextid=PtKPJ9/" target="_blank" style={{ color: "white" }}>
@@ -148,21 +203,17 @@ function App() {
                           <FaWhatsapp />
                         </a>
                       </li>
-                           
+
                     </ul>
 
-                  </div>
-                  {/* end text-widget */}
+                  </div>{/* end text-widget */}
                 </div>
-              </div>
-              {/* end col */}
-            </div>
-            {/* end row */}
-          </div>
-          {/* end container */}
+              </div>{/* end col */}
+            </div>{/* end row */}
+          </div>{/* end container */}
         </div>
-        {/* end footer */}
 
+        {/* end footer */}
 
         {/* /.modal */}
       </div>

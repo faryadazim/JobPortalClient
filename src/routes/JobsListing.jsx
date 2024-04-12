@@ -5,7 +5,7 @@ import { Link, useParams } from 'react-router-dom'
 import { formatDate, truncateString } from '../utilities' 
 import { JobCategories, endPoint } from '../constraint' 
 
-const JobsListing = () => {
+const JobsListing = ({ currentSectors, setCurrentSectors }) => {
 
     const [jobData, setJobData] = useState([])
     const [currentPage, setCurrentPage] = useState(1)
@@ -14,13 +14,15 @@ const JobsListing = () => {
  
     const { categorySlug } = useParams();
     const category = categorySlug == null ? "-1" : categorySlug;
+    const type   = categorySlug == null ?currentSectors: "All";
     const headLabel = categorySlug == null ? "Featured Jobs" : JobCategories.find(x => x.value == categorySlug).label
 
+    
     const fetchData = () => {
         // setIsLoading(true)
         let config = {
             method: 'get',
-            url: `${endPoint}/job?page=${currentPage}&size=8&category=${category}&search=-1`
+            url: `${endPoint}/job?page=${currentPage}&size=8&category=${category}&search=-1&type=${type}`
  
         };
 
@@ -38,6 +40,11 @@ const JobsListing = () => {
             .catch((error) => {
                 console.log(error);
             });
+
+
+ 
+ 
+
     }
 
 
@@ -53,7 +60,7 @@ const JobsListing = () => {
 
     useEffect(() => { 
         fetchData()
-    }, [currentPage,categorySlug])
+    }, [currentPage,categorySlug , currentSectors])
 
     return (
 
@@ -62,14 +69,14 @@ const JobsListing = () => {
                 <div className="section-title text-center clearfix">    <h4>{headLabel}</h4>
                     <hr />
                     {category == null && <p className="lead">
-                        Find Pakistan Latest job | Govt and Private
+                        Find Pakistan Latest job | Govt and Private Jobs
                     </p>}     </div>
                 <div className="all-jobs job-listing clearfix">
                     {
                         isLoading ? <> <Loader /> </> :
                             <> 
                                 {
-                                jobData.length > 0 && categorySlug==null && <div className="job-title hidden-sm hidden-xs"><h5>Featured</h5></div>
+                                jobData.length > 0 && categorySlug==null && <div className="job-title hidden-sm hidden-xs"><h5> Latest</h5></div>
                                 }
 
 
