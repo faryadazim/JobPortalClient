@@ -21,7 +21,7 @@ import SubmitJobs from './routes/SubmitJobs.jsx'
 // import Other from './Other.jsx'
 
 
-const router = createBrowserRouter([
+const router = HashRouter([
   {
     path: "/",
     element: <App />,
