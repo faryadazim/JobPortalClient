@@ -28,7 +28,7 @@ function App() {
                     <span className="icon-bar" />
                     <span className="icon-bar" />
                   </button>
-                  <Link className="navbar-brand" to="/">
+                  <Link className="navbar-brand" to="/job-portal/">
                     <img src={Logo} className="img-responsive" style={{ height: "50px" }} /></Link>
                 </div>
                 {/* end navbar header */}
