@@ -175,7 +175,7 @@ const JobSingle = () => {
                                         {
                                             Object.entries(imagesRecord).map(([key, value]) => (
 
-                                                <img src={value} alt className="" style={{ width: "100%" }} key={key} />
+                                                <img src={value}   className="" style={{ width: "100%" }} key={key} />
                                             ))
                                         }
                                         <br />
