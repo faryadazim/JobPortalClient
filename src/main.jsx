@@ -21,30 +21,30 @@ import SubmitJobs from './routes/SubmitJobs.jsx'
 // import Other from './Other.jsx'
 
 
-const router = HashRouter([
+const router = createBrowserRouter([
   {
-    path: "/",
+    path: "/job-portal/",
     element: <App />,
     errorElement: <ErrorPage />,
     children: [
       {
-        path: "/",
+        path: "/job-portal/",
         element: < Jobs />,
       },
       {
-        path: "/job/:id",
+        path: "/job-portal/job/:id",
         element: <JobSingle />
       },
       {
-        path: "/category/:categorySlug",
+        path: "/job-portal/category/:categorySlug",
         element: <JobsListing />,
       },
       {
-        path: "/admin",
+        path: "/job-portal/admin",
         element: <Login />,
       },
       {
-        path: "/dashboard",
+        path: "/job-portal/dashboard",
         element: <Dashboard />,
         children: [
           {
