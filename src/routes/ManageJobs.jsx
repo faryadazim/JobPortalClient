@@ -99,8 +99,8 @@ const ManageJobs = () => {
 
 
                                         {
-                                            jobData.map((job) => {
-                                                return <tr>
+                                            jobData.map((job,index) => {
+                                                return <tr key={index}>
                                                     <td>
                                                         <h4>
                                                             <a  >{job?.job_name}</a><br />

@@ -35,8 +35,8 @@ function App() {
                 <div id="navbar" className="navbar-collapse collapse">
                   <ul className="nav navbar-nav">
                     {
-                      JobCategories.map((x) => {
-                        return <li style={{ fontWeight: "900" }}><Link to={`category/${x.value}`}>{x.label}</Link></li>
+                      JobCategories.map((x,index) => {
+                        return <li key={index} style={{ fontWeight: "900" }}><Link to={`category/${x.value}`}>{x.label}</Link></li>
                       })
 
                     }

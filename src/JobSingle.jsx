@@ -193,7 +193,7 @@ const JobSingle = () => {
 
                                                     {
                                                         RecentJobs.map((job, index) => {
-                                                            return <li>
+                                                            return <li key={index}>
                                                                 <div className="post" style={{ border: "1px solid #ededed" }}>
                                                                     <a href="#">
                                                                         <h4>{job.job_name}</h4>
