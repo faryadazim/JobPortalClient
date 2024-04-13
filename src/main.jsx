@@ -4,7 +4,7 @@ import App from './App.jsx'
 import './index.css'
 import Root from './routes/root'
 
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
 
 import ErrorPage from './error-page.jsx'
 import Jobs from './routes/Jobs'
