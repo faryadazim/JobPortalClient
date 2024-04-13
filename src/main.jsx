@@ -73,7 +73,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       <Routes>
         <Route path="/" element={<App />}>
           <Route index element={<Jobs />} />
-          <Route path="job/:id" element={<JobSingle />} />
+          <Route path="job/:slug" element={<JobSingle />} />
           <Route path="category/:categorySlug" element={<JobsListing />} />
           <Route path="admin" element={<Login />} />
           <Route path="dashboard" element={<PrivateRoute> <Dashboard /></PrivateRoute>}>

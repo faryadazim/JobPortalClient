@@ -83,12 +83,13 @@ const JobsListing = ({ currentSectors, setCurrentSectors }) => {
                                 <div  >
                                     {
                                         jobData.length > 0 && jobData?.map((x, index) => { 
+                                            console.log("x", x)
                                             return <div className="col-md-6 double-job double-job-border-side" key={index}>
                                                 <div className="row">
                                                     <div className="  col-sm-10  " style={{ padding: "0px 3px" }} >
                                                         <div className="badge freelancer-badge">{x?.type ? x?.type : 'NEW'}</div>
                                                         <h3 >
-                                                            <Link className="navbar-brand" to={`job/${x?._id}`} style={{ width: "100%" }}>
+                                                            <Link className="navbar-brand" to={`job/${x?.slug}`} style={{ width: "100%" }}>
 
                                                                 {truncateString(x?.job_name)}</Link>
                                                         </h3>
@@ -101,7 +102,7 @@ const JobsListing = ({ currentSectors, setCurrentSectors }) => {
                                                     <div className="  col-sm-2 p-0" style={{ padding: "0px 3px", marginTop: "5%" }}>
                                                         <div className="job-meta text-center">
                                                             <h4>{x?.salary}</h4>
-                                                            <Link to={`job/${x?._id}`} className="btn btn-primary btn-sm btn-block">Detail</Link>
+                                                            <Link to={`job/${x?.slug}`} className="btn btn-primary btn-sm btn-block">Detail</Link>
                                                         </div>
                                                     </div>
                                                 </div>

@@ -1,24 +1,27 @@
 import React, { useEffect, useState } from 'react'
-import { useParams, Link } from 'react-router-dom'
+import { useParams, Link, useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import { formatDate, removeUnderscoreAndCapitalize } from './utilities'
 import Loader from './Loader'
+import './JobTable.css'
 import { endPoint } from './constraint'
 
 const JobSingle = () => {
+    const { slug } = useParams();
+    const navigate = useNavigate();
     const [x, setX] = useState({})
     const [jobInfo, setJobInfo] = useState({})
-    const { id } = useParams();
     const [isLoading, setIsLoading] = useState(true);
     const [RecentJobs, setRecentJobs] = useState([]);
     const [imagesRecord, setImagesRecord] = useState({});
+
     const removeEmptyFields = (obj) => {
         return Object.fromEntries(Object.entries(obj).filter(([_, v]) => v != null && v !== ''));
     };
 
     const fetchDataSingle = async () => {
 
-        await axios.get(`${endPoint}/job/${id}`)
+        await axios.get(`${endPoint}/job/info/${slug}`)
             .then((response) => {
                 console.log(response.data, "data is here")
                 setX(response.data.payload)
@@ -33,7 +36,7 @@ const JobSingle = () => {
                     vacancies: response?.data?.payload?.vacancies,
                     last_date: formatDate(response?.data?.payload?.last_date),
                     salary: response?.data?.payload?.salary,
-                    group_link: "google.com"
+                    group_link: response?.data?.payload?.join_whatsapp_group,
                 }
                 var imagesInfo = {
                     image_1: response?.data?.payload?.image_1,
@@ -93,7 +96,7 @@ const JobSingle = () => {
 
     useEffect(() => {
         fetchDataSingle()
-    }, [])
+    }, [slug])
 
     return (
         <>
@@ -136,7 +139,7 @@ const JobSingle = () => {
                                             <div class="tableTbl">
                                                 <div class="tableTbl-header">
                                                     <div class="header__itemTbl" ><a id="name" class="filter__linkTbl text-center" style={{ textAlign: "center" }}>Important Point | Qualification</a></div>
-                                                </div>  
+                                                </div>
 
                                                 {Object.entries(jobInfo).map(([key, value]) => (
                                                     <div className="tableTbl-row" key={key}>
@@ -189,9 +192,10 @@ const JobSingle = () => {
                                                         RecentJobs.map((job, index) => {
                                                             return <li key={index}>
                                                                 <div className="post" style={{ border: "1px solid #ededed" }}>
-                                                                    <a href="#">
-                                                                        <h4>{job.job_name}</h4>
-                                                                    </a>
+                                                               
+                                                             
+                                                             <a>  <h4  onClick={() => navigate(`/job/${job?.slug}`)} style={{cursor: "pointer"}}>{job.job_name}</h4></a> 
+ 
                                                                     <div className="blog-meta clearfix">
                                                                         <ul className="list-inline">
                                                                             <li><a href="#"><i className="fa fa-clock-o" /> {formatDate(job.last_date)}</a></li>

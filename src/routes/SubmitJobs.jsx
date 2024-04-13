@@ -38,15 +38,19 @@ const SubmitJobs = () => {
         images: []
     });
 
+    const [isLoading, setIsLoading] = useState(false);
     const accessToken = localStorage.getItem('token');
 
     const handleSubmit = async (e) => {
+        setIsLoading(true);
         e.preventDefault();
 
         if (jobData.job_name === '') {
             alert("Please enter job name")
+            setIsLoading(false);
             return;
         }
+
         const formDataWithImages = new FormData();
         const formattedLastDate = formatDateForInputJob(jobData.last_date);
 
@@ -73,9 +77,11 @@ const SubmitJobs = () => {
                 ...initialValue,
                 images: []
             });
+            setIsLoading(false);
         } catch (error) {
             alert("Error in submitting job");
             console.error(error);
+            setIsLoading(false);
         }
     };
 
@@ -137,7 +143,14 @@ const SubmitJobs = () => {
                         </div>
                     </div>
                     <hr className="invis" />
-                    <button type="submit" className="btn btn-primary">Submit Form</button>
+                    {
+                        isLoading ? <div className="text-center">
+                            <div className="spinner-border" role="status">
+                                <span className="visually-hidden">Loading...</span>
+                            </div>
+                        </div> :
+                            <button type="submit" className="btn btn-primary">Submit Form</button>
+                    }
                 </form>
             </div>
         </div>
