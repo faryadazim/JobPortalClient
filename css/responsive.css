@@ -43,16 +43,21 @@
 
     .image-bg {
         background-position: -134px -24px;
+
+        background-image: url(https://res.cloudinary.com/dxvec7whr/image/upload/v1713048583/lxdeemdzm92aeklntr41.jpg);
     }
 
 
-    .center-footer-icon { 
+
+    .center-footer-icon {
         display: flex;
         justify-content: center;
     }
-    .footer { 
+
+    .footer {
         padding: 36px 0;
     }
+
     .home-message-height {
         height: 260px;
     }
