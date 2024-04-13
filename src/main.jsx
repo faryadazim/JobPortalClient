@@ -4,11 +4,8 @@ import App from './App.jsx'
 import './index.css'
 import Root from './routes/root'
 
-import {
-  createBrowserRouter,
-  HashRouter,
-  RouterProvider,
-} from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
 import ErrorPage from './error-page.jsx'
 import Jobs from './routes/Jobs'
 import JobSingle from './JobSingle'
@@ -21,58 +18,69 @@ import SubmitJobs from './routes/SubmitJobs.jsx'
 // import Other from './Other.jsx'
 
 
-const router = createBrowserRouter([
-  {
-    path: "/job-portal/",
-    element: <App />,
-    errorElement: <ErrorPage />,
-    children: [
-      {
-        path: "/job-portal/",
-        element: < Jobs />,
-      },
-      {
-        path: "/job-portal/job/:id",
-        element: <JobSingle />
-      },
-      {
-        path: "/job-portal/category/:categorySlug",
-        element: <JobsListing />,
-      },
-      {
-        path: "/job-portal/admin",
-        element: <Login />,
-      },
-      {
-        path: "/job-portal/dashboard",
-        element: <Dashboard />,
-        children: [
-          {
-            path: "manageJobs",
-            element: <ManageJobs />,
-          },
-          {
-            path: "changePassword",
-            element: <ChangePassword />,
-          },
-          {
-            path: "SubmitJobs",
-            element: <SubmitJobs />,
-          }
-        ]
-      }
-    ],
-  },
-
-]);
-
-
-
+// const router = createBrowserRouter({
+//   useHash: true,
+//   routes: [
+//     {
+//       path: "/job-portal/",
+//       element: <App />,
+//       errorElement: <ErrorPage />,
+//       children: [
+//         {
+//           path: "/job-portal/",
+//           element: <Jobs />,
+//         },
+//         {
+//           path: "/job-portal/job/:id",
+//           element: <JobSingle />
+//         },
+//         {
+//           path: "/job-portal/category/:categorySlug",
+//           element: <JobsListing />,
+//         },
+//         {
+//           path: "/job-portal/admin",
+//           element: <Login />,
+//         },
+//         {
+//           path: "/job-portal/dashboard",
+//           element: <Dashboard />,
+//           children: [
+//             {
+//               path: "manageJobs",
+//               element: <ManageJobs />,
+//             },
+//             {
+//               path: "changePassword",
+//               element: <ChangePassword />,
+//             },
+//             {
+//               path: "SubmitJobs",
+//               element: <SubmitJobs />,
+//             }
+//           ]
+//         }
+//       ],
+//     }
+//   ]
+// });
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    {/* <App /> */}
-    <RouterProvider router={router} />
-
+    <Router>
+      <Routes>
+        <Route path="/" element={<App />}>
+          <Route index element={<Jobs />} />
+          <Route path="job/:id" element={<JobSingle />} />
+          <Route path="category/:categorySlug" element={<JobsListing />} />
+          <Route path="admin" element={<Login />} />
+          <Route path="dashboard" element={<Dashboard />}>
+            <Route path="manageJobs" element={<ManageJobs />} />
+            <Route path="changePassword" element={<ChangePassword />} />
+            <Route path="SubmitJobs" element={<SubmitJobs />} />
+          </Route>
+        </Route>
+      </Routes>
+    </Router>
   </React.StrictMode>,
-)
+);

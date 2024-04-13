@@ -28,7 +28,7 @@ function App() {
                     <span className="icon-bar" />
                     <span className="icon-bar" />
                   </button>
-                  <Link className="navbar-brand" to="/job-portal/">
+                  <Link className="navbar-brand" to="/">
                     <img src={Logo} className="img-responsive" style={{ height: "50px" }} /></Link>
                 </div>
                 {/* end navbar header */}
@@ -36,7 +36,7 @@ function App() {
                   <ul className="nav navbar-nav">
                     {
                       JobCategories.map((x,index) => {
-                        return <li key={index} style={{ fontWeight: "900" }}><Link to={`/job-portal/category/${x.value}`}>{x.label}</Link></li>
+                        return <li key={index} style={{ fontWeight: "900" }}><Link to={`/category/${x.value}`}>{x.label}</Link></li>
                       })
 
                     }
