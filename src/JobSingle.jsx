@@ -133,13 +133,10 @@ const JobSingle = () => {
                                         }
 
                                         <div class="containerTbl" style={{ marginTop: "20px" }}>
-
                                             <div class="tableTbl">
-
-
                                                 <div class="tableTbl-header">
                                                     <div class="header__itemTbl" ><a id="name" class="filter__linkTbl text-center" style={{ textAlign: "center" }}>Important Point | Qualification</a></div>
-                                                </div>
+                                                </div>  
 
                                                 {Object.entries(jobInfo).map(([key, value]) => (
                                                     <div className="tableTbl-row" key={key}>
@@ -147,11 +144,8 @@ const JobSingle = () => {
                                                         {
                                                             key == 'group_link' ? <div className="tableTbl-dataRgt" style={{ textAlign: "left" }}>
                                                                 <a href={value} style={{ color: "#2980B9", fontWeight: "700", width: "60%" }}>Click here</a>
-                                                            </div> :
-                                                                <div className="tableTbl-dataRgt" style={{ textAlign: 'left', width: "60%" }}>{value}</div>
+                                                            </div> : <div className="tableTbl-dataRgt" style={{ textAlign: 'left', width: "60%" }}>{value}</div>
                                                         }
-
-
                                                     </div>
                                                 ))}
                                             </div>
@@ -163,7 +157,7 @@ const JobSingle = () => {
 
                                                 {
                                                     x?.is_how_to_apply && <>
-                                                        <h4 className="small-title">    How to Apply</h4>
+                                                        <h4 className="small-title"> How to Apply</h4>
                                                         <p className="">{processText(x?.how_to_apply)}</p>
                                                         {x?.is_apply_link && <Link />}
                                                     </>
@@ -175,7 +169,7 @@ const JobSingle = () => {
                                         {
                                             Object.entries(imagesRecord).map(([key, value]) => (
 
-                                                <img src={value}   className="" style={{ width: "100%" }} key={key} />
+                                                <img src={value} className="" style={{ width: "100%" }} key={key} />
                                             ))
                                         }
                                         <br />

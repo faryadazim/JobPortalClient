@@ -15,7 +15,9 @@ import Dashboard from './routes/Dashboard.jsx'
 import ManageJobs from './routes/ManageJobs.jsx'
 import ChangePassword from './routes/ChangePassword.jsx'
 import SubmitJobs from './routes/SubmitJobs.jsx'
+import PrivateRoute from './routes/PrivateRoute.jsx'
 // import Other from './Other.jsx'
+
 
 
 // const router = createBrowserRouter({
@@ -74,7 +76,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           <Route path="job/:id" element={<JobSingle />} />
           <Route path="category/:categorySlug" element={<JobsListing />} />
           <Route path="admin" element={<Login />} />
-          <Route path="dashboard" element={<Dashboard />}>
+          <Route path="dashboard" element={<PrivateRoute> <Dashboard /></PrivateRoute>}>
             <Route path="manageJobs" element={<ManageJobs />} />
             <Route path="changePassword" element={<ChangePassword />} />
             <Route path="SubmitJobs" element={<SubmitJobs />} />
