@@ -2,7 +2,7 @@ import React from 'react'
 
 const Home = ({ currentSectors, setCurrentSectors }) => {
     return (<>
-        <div className="parallax section homehero  d-none" data-stellar-background-ratio="0.5" style={{ backgroundImage: 'url("demo.jpg")', backgroundPosition: '0px -24px' }}>
+        <div className="parallax section homehero  d-none image-bg" data-stellar-background-ratio="0.5" style={{ backgroundImage: 'url("demo.jpg")' }}>
             <div className="container">
                 <div className="row">
                     <div className="col-md-7 home-message-height">
@@ -33,7 +33,7 @@ const Home = ({ currentSectors, setCurrentSectors }) => {
                                     </svg>
 
                                 </div>}
-                                {currentSectors !== "Govt" && <div className="svg-wrapper">
+                                {currentSectors !== "Govt" && <div className="svg-wrapper" style={{marginTop:"-80px"}}>
                                     <div className="ttext">
                                         <a className="btn btn-custom  custom-width-sectors" onClick={()=>setCurrentSectors("Govt")}>Govt Sector <span className="fa fa-angle-right" /></a>
                                     </div>

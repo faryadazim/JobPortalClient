@@ -40,6 +40,22 @@
         font-size: 14px;
         line-height: 26px
     }
+
+    .image-bg {
+        background-position: -134px -24px;
+    }
+
+
+    .center-footer-icon { 
+        display: flex;
+        justify-content: center;
+    }
+    .footer { 
+        padding: 36px 0;
+    }
+    .home-message-height {
+        height: 260px;
+    }
 }
 
 @media (max-width:991px) {

@@ -300,3 +300,8 @@ small {
     font-family: Montserrat;
     font-weight: 400 !important
 }
+
+
+.image-bg{ 
+    background-position: 0px -24px; 
+}
