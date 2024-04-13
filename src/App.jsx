@@ -12,6 +12,8 @@ import { FaTwitter } from "react-icons/fa";
 import { FaLinkedinIn } from "react-icons/fa";
 import { FaGooglePlusG } from "react-icons/fa";
 import { FaWhatsapp } from "react-icons/fa";
+
+import '../css/responsive.css'
 function App() {
   // const [currentPage, setCurrentPage] = useState("/") 
   return (
@@ -29,7 +31,7 @@ function App() {
                     <span className="icon-bar" />
                   </button>
                   <Link className="navbar-brand" to="/">
-                    <img src={Logo} className="img-responsive" style={{ height: "50px" }} /></Link>
+                    <img src={Logo} className="img-responsive logoHeight"  /></Link>
                 </div>
                 {/* end navbar header */}
                 <div id="navbar" className="navbar-collapse collapse">

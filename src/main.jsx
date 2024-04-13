@@ -16,6 +16,7 @@ import ManageJobs from './routes/ManageJobs.jsx'
 import ChangePassword from './routes/ChangePassword.jsx'
 import SubmitJobs from './routes/SubmitJobs.jsx'
 import PrivateRoute from './routes/PrivateRoute.jsx'
+import '../css/responsive.css'
 // import Other from './Other.jsx'
 
 

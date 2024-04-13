@@ -2796,3 +2796,13 @@ hr.invis {
     margin-bottom: 0;
 }
 
+
+/* custom css */
+.logoHeight{
+    height: 50px ;
+    background-color: green; 
+}
+ 
+.home-message-height{
+    height: 240px;
+}

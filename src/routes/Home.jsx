@@ -5,7 +5,7 @@ const Home = ({ currentSectors, setCurrentSectors }) => {
         <div className="parallax section homehero  d-none" data-stellar-background-ratio="0.5" style={{ backgroundImage: 'url("demo.jpg")', backgroundPosition: '0px -24px' }}>
             <div className="container">
                 <div className="row">
-                    <div className="col-md-7" style={{ maxHeight: "240px" }}>
+                    <div className="col-md-7 home-message-height">
                         <div className="home-message">
                             <h1>
                                 A way toward your Growth Career success

@@ -118,7 +118,7 @@ const JobSingle = () => {
 
                                         </div>
                                     </div> */}
-                                    <div className="col-md-8 col-sm-8 col-xs-8">
+                                    <div className="col-md-8 ">
                                         <div className="badge freelancer-badge">{x?.type ? x?.type : 'NEW'}</div>
                                         <h3>{x?.job_name}</h3>
                                         <small>
@@ -179,7 +179,7 @@ const JobSingle = () => {
                                         <br />
 
                                     </div>
-                                    <div className="col-md-4 col-sm-4 col-xs-4">
+                                    <div className="col-md-4 ">
                                         <div className="job-meta m45">
                                             <h3>Lastest Job</h3>
                                         </div>
