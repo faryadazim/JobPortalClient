@@ -2,7 +2,7 @@ import React from 'react'
 
 const Home = ({ currentSectors, setCurrentSectors }) => {
     return (<>
-        <div className="parallax section homehero  d-none image-bg" data-stellar-background-ratio="0.5" style={{ backgroundImage: 'url("demo.jpg")' }}>
+        <div className="parallax section homehero  d-none image-bg" data-stellar-background-ratio="0.5" style={{ backgroundImage: 'url("/src/assets/demo.jpg")' }}>
             <div className="container">
                 <div className="row">
                     <div className="col-md-7 home-message-height">
