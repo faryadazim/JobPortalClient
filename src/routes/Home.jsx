@@ -14,16 +14,16 @@ const Home = ({ currentSectors, setCurrentSectors }) => {
                                 Explore Opportunities in Government and Private Sectors!
                             </p>
                             <div className="d-flex justify-content-centers">
-                            {currentSectors !== "All" && <div className="svg-wrapper">
+                            {currentSectors !== "All" && <div className="svg-wrapper" style={{marginTop:"-80px"}}>
                                     <div className="ttext">
-                                        <a className="btn btn-custom  custom-width-sectors" onClick={()=>setCurrentSectors("All")}>View All Jobs <span className="fa fa-angle-right" /></a>
+                                        <a className="btn btn-custom  custom-width-sectors" onClick={()=>setCurrentSectors("Govt")}>Govt Sector <span className="fa fa-angle-right" /></a>
                                     </div>
                                     <svg height={57} width={200} xmlns="http://www.w3.org/2000/svg">
                                         <rect className="shape" height={57} width={200} />
                                     </svg>
 
                                 </div>}
-                                {currentSectors !== "Private" && <div className="svg-wrapper"  style={ {marginTop:"-80px"}}>
+                                {currentSectors !== "Private" && <div className="svg-wrapper"  style={ {marginTop:currentSectors !== "All"  && "-80px"}}>
                                     <div className="ttext">
                                         <a className="btn btn-custom  custom-width-sectors"  onClick={()=>{setCurrentSectors("Private")
                                     }}>Private Sector <span className="fa fa-angle-right" /></a>
