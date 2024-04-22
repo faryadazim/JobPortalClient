@@ -87,7 +87,7 @@ const JobsListing = ({ currentSectors, setCurrentSectors }) => {
                                             return <div className="col-md-6 double-job double-job-border-side" key={index}>
                                                 <div className="row">
                                                     <div className="  col-sm-10  " style={{ padding: "0px 3px" }} >
-                                                        <div className="badge freelancer-badge">{x?.type ? x?.type : 'NEW'}</div>
+                                                        {/* <div className="badge freelancer-badge">{x?.type ? x?.type : 'NEW'}</div> */}
                                                         <h3 >
                                                             <Link className="navbar-brand" to={`/job/${x?.slug}`} style={{ width: "100%" }}>
 

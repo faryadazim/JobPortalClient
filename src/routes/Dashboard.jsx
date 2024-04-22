@@ -16,7 +16,7 @@ const Dashboard = () => {
                     <div className="container">
                         <div className="page-title text-center">
                             <div className="heading-holder">
-                                <h1>Manage Jobs</h1>
+                                <h1>Dashboard</h1>
                             </div>
                             <p className="lead">Hello {capitalizeFirstLetter(userName)}, this is your private dashboard.</p>
                         </div>

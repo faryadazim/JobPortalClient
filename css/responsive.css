@@ -1,4 +1,7 @@
 @media (max-width:600px) {
+    .double-job{
+        height: 200px;
+    }
     .home-message h1 {
         font-size: 21px !important
     }

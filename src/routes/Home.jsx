@@ -23,7 +23,7 @@ const Home = ({ currentSectors, setCurrentSectors }) => {
                                     </svg>
 
                                 </div>}
-                                {currentSectors !== "Private" && <div className="svg-wrapper">
+                                {currentSectors !== "Private" && <div className="svg-wrapper"  style={ {marginTop:"-80px"}}>
                                     <div className="ttext">
                                         <a className="btn btn-custom  custom-width-sectors"  onClick={()=>{setCurrentSectors("Private")
                                     }}>Private Sector <span className="fa fa-angle-right" /></a>
