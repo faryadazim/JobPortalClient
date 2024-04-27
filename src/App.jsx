@@ -12,12 +12,14 @@ import { FaTwitter } from "react-icons/fa";
 import { FaLinkedinIn } from "react-icons/fa";
 import { FaGooglePlusG } from "react-icons/fa";
 import { FaWhatsapp } from "react-icons/fa";
+import { Analytics } from '@vercel/analytics/react';
 
 import '../css/responsive.css'
 function App() {
   // const [currentPage, setCurrentPage] = useState("/") 
   return (
     <>
+      <Analytics />
       <div id="wrapper">
         <header className="header ">
           <div className="container-fluid">
