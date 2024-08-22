@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react' 
+import React, { useState, useEffect } from 'react'
 import Loader from '../Loader'
-import axios from 'axios' 
+import axios from 'axios'
 import { Link, useParams } from 'react-router-dom'
-import { formatDate, truncateString } from '../utilities' 
-import { JobCategories, endPoint } from '../constraint' 
+import { formatDate, truncateString } from '../utilities'
+import { JobCategories, endPoint } from '../constraint'
 
 const JobsListing = ({ currentSectors, setCurrentSectors }) => {
 
@@ -11,19 +11,19 @@ const JobsListing = ({ currentSectors, setCurrentSectors }) => {
     const [currentPage, setCurrentPage] = useState(1)
     const [isLoading, setIsLoading] = useState(true);
     const [totalPages, setTotalPages] = useState(1);
- 
+
     const { categorySlug } = useParams();
     const category = categorySlug == null ? "-1" : categorySlug;
-    const type   = categorySlug == null ?currentSectors: "All";
-    const headLabel = categorySlug == null ? "Featured Jobs" : JobCategories.find(x => x.value == categorySlug).label
+    const type = categorySlug == null ? currentSectors : "All";
+    const headLabel = categorySlug == null ? "ALL Latest Jobs Here" : JobCategories.find(x => x.value == categorySlug).label
 
-    
+
     const fetchData = () => {
         // setIsLoading(true)
         let config = {
             method: 'get',
-            url: `${endPoint}/job?page=${currentPage}&size=8&category=${category}&search=-1&type=${type}`
- 
+            url: `${endPoint}/job?page=${currentPage}&size=30&category=${category}&search=-1&type=${type}`
+
         };
 
         axios.request(config)
@@ -42,8 +42,8 @@ const JobsListing = ({ currentSectors, setCurrentSectors }) => {
             });
 
 
- 
- 
+
+
 
     }
 
@@ -58,9 +58,9 @@ const JobsListing = ({ currentSectors, setCurrentSectors }) => {
 
 
 
-    useEffect(() => { 
+    useEffect(() => {
         fetchData()
-    }, [currentPage,categorySlug , currentSectors])
+    }, [currentPage, categorySlug, currentSectors])
 
     return (
 
@@ -74,40 +74,41 @@ const JobsListing = ({ currentSectors, setCurrentSectors }) => {
                 <div className="all-jobs job-listing clearfix">
                     {
                         isLoading ? <> <Loader /> </> :
-                            <> 
-                                {
+                            <>
+                                {/* {
                                 jobData.length > 0 && categorySlug==null && <div className="job-title hidden-sm hidden-xs"><h5> Latest</h5></div>
-                                }
+                                } */}
 
 
-                                <div  >
+                                <div style={{ gap: "4px" }} >
                                     {
-                                        jobData.length > 0 && jobData?.map((x, index) => { 
-                                            console.log("x", x)
-                                            return <div className="col-md-6 double-job double-job-border-side" key={index}>
-                                                <div className="row">
-                                                    <div className="  col-sm-10  " style={{ padding: "0px 3px" }} >
-                                                        {/* <div className="badge freelancer-badge">{x?.type ? x?.type : 'NEW'}</div> */}
-                                                        <h3 >
-                                                            <Link className="navbar-brand" to={`/job/${x?.slug}`} style={{ width: "100%" }}>
+                                        jobData.length > 0 && jobData?.map((x, index) => {
 
-                                                                {truncateString(x?.job_name)}</Link>
-                                                        </h3>
-                                                        <p>
-                                                            {/* <span>Publisher : <a href="#">Amanda Sun</a></span> */}
-                                                            <span >In : <a href="#" style={{ marginRight: "4px" }}>{x?.department},</a></span>
-                                                            <span>Last Date : {formatDate(x.last_date)}</span>
-                                                        </p>
-                                                    </div>
-                                                    <div className="  col-sm-2 p-0" style={{ padding: "0px 3px", marginTop: "5%" }}>
-                                                        <div className="job-meta text-center">
-                                                            <h4>{x?.salary}</h4>
-                                                            <Link to={`/job/${x?.slug}`} className="btn btn-primary btn-sm btn-block">Detail</Link>
-                                                        </div>
+                                            return    <div>
+                                                <div className="col-md-6 double-job double-job-border-side" key={index} style={{ }}>
+                                                <div style={{   padding: "24px 22px" , backgroundColor:"white", borderRadius: "20px" }}>
+                                                      <h3 className='mt-0' style={{ marginTop: "0px" }}>
+                                                        <Link className="navbar-brand" to={`/job/${x?.slug}`} style={{ width: "100%" }}>
+
+                                                            {truncateString(x?.job_name)}</Link>
+                                                    </h3>
+                                                    <p style={{ marginBottom: "0px" }}>
+                                                        <span >In : <a href="#" style={{ marginRight: "4px" }}>{x?.department},</a></span>
+                                                        <span>Last Date : {formatDate(x.last_date)}</span>
+                                                    </p> </div>
+                                                </div>
+                                                <div className="col-md-6 double-job double-job-border-side" key={index} style={{ }}>
+                                                   <div style={{   padding: "24px 22px" , backgroundColor:"white", borderRadius: "20px" }}> <h3 className='mt-0' style={{ marginTop: "0px" }}>
+                                                        <Link className="navbar-brand" to={`/job/${x?.slug}`} style={{ width: "100%" }}>
+
+                                                            {truncateString(x?.job_name)}</Link>
+                                                    </h3>
+                                                    <p style={{ marginBottom: "0px" }}>
+                                                        <span >In : <a href="#" style={{ marginRight: "4px" }}>{x?.department},</a></span>
+                                                        <span>Last Date : {formatDate(x.last_date)}</span>
+                                                    </p> 
                                                     </div>
                                                 </div>
-
-
                                             </div>
 
                                         })}
@@ -115,7 +116,7 @@ const JobsListing = ({ currentSectors, setCurrentSectors }) => {
                             </>
                     }
                 </div>
-                {/* end alljobs */} 
+                {/* end alljobs */}
                 {jobData.length == 0 && <p>No positions available at the moment. Please stay updated or explore alternative categories. Thank you.</p>}
                 {jobData.length > 0 && <nav aria-label="Page navigation" style={{ display: "flex", justifyContent: "right" }}>
                     <ul className="pagination ">
@@ -124,8 +125,8 @@ const JobsListing = ({ currentSectors, setCurrentSectors }) => {
 
                                 <span aria-hidden="true"    >«</span>
                             </a>
-                        </li> 
-                        
+                        </li>
+
                         {/* <li><a href="#">1</a></li>
                         <li><a href="#">2</a></li>
                         <li><a href="#">3</a></li>
