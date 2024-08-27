@@ -4,6 +4,7 @@ import axios from 'axios'
 import { Link, useParams } from 'react-router-dom'
 import { formatDate, truncateString } from '../utilities'
 import { JobCategories, endPoint } from '../constraint'
+import { useOutletContext } from 'react-router-dom';
 
 const JobsListing = ({ currentSectors, setCurrentSectors }) => {
 
@@ -12,17 +13,19 @@ const JobsListing = ({ currentSectors, setCurrentSectors }) => {
     const [isLoading, setIsLoading] = useState(true);
     const [totalPages, setTotalPages] = useState(1);
 
-    const { categorySlug } = useParams();
+    const { categorySlug , search } = useParams();
+    const search_ = search == null ? "-1" : search;
     const category = categorySlug == null ? "-1" : categorySlug;
     const type = categorySlug == null ? currentSectors : "All";
     const headLabel = categorySlug == null ? "ALL Latest Jobs Here" : JobCategories.find(x => x.value == categorySlug).label
-
-
+    var temp = -1
+    const context = useOutletContext();
+    console.log("context", context)
     const fetchData = () => {
         // setIsLoading(true)
         let config = {
             method: 'get',
-            url: `${endPoint}/job?page=${currentPage}&size=30&category=${category}&search=-1&type=${type}`
+            url: `${endPoint}/job?page=${currentPage}&size=30&category=${category}&search=${search_}&type=${type==null?"All":type}`,
 
         };
 
@@ -66,10 +69,17 @@ const JobsListing = ({ currentSectors, setCurrentSectors }) => {
 
         <div className="section lb d-none">
             <div className="container">
-                <div className="section-title text-center clearfix">    <h4>{headLabel}</h4>
+                <div className="section-title text-center clearfix">    <h4>
+                    
+                    {
+                        search_ == "-1" ? <span>{headLabel}</span>: <span>your search results for: {search_}</span>
+                    } 
+                    
+                    </h4>
                     <hr />
                     {category == null && <p className="lead">
-                        Find Pakistan Latest job | Govt and Private Jobs
+                        Find Pakistan Latest job | Govt and Private Jobs 
+                        {/* your seach rhis: {context} */}
                     </p>}     </div>
                 <div className="all-jobs job-listing clearfix">
                     {
@@ -80,35 +90,51 @@ const JobsListing = ({ currentSectors, setCurrentSectors }) => {
                                 } */}
 
 
+                                {/* w-50  double-job double-job-border-side */}
                                 <div style={{ gap: "4px" }} >
                                     {
-                                        jobData.length > 0 && jobData?.map((x, index) => {
 
-                                            return    <div>
-                                                <div className="col-md-6 double-job double-job-border-side" key={index} style={{ }}>
-                                                <div style={{   padding: "24px 22px" , backgroundColor:"white", borderRadius: "20px" }}>
-                                                      <h3 className='mt-0' style={{ marginTop: "0px" }}>
-                                                        <Link className="navbar-brand" to={`/job/${x?.slug}`} style={{ width: "100%" }}>
+                                        jobData.length > 0 && Array.from({ length: Math.ceil(jobData.length / 2) }, (_, index) => {
+                                            temp = temp + 2
+                                            console.log(jobData[temp - 1]?.job_name)
+                                            return <div className='d-flex-direction' >
+                                                <div className='card-job' >
+                                                    <div className='card-inner'>
 
-                                                            {truncateString(x?.job_name)}</Link>
-                                                    </h3>
-                                                    <p style={{ marginBottom: "0px" }}>
-                                                        <span >In : <a href="#" style={{ marginRight: "4px" }}>{x?.department},</a></span>
-                                                        <span>Last Date : {formatDate(x.last_date)}</span>
-                                                    </p> </div>
-                                                </div>
-                                                <div className="col-md-6 double-job double-job-border-side" key={index} style={{ }}>
-                                                   <div style={{   padding: "24px 22px" , backgroundColor:"white", borderRadius: "20px" }}> <h3 className='mt-0' style={{ marginTop: "0px" }}>
-                                                        <Link className="navbar-brand" to={`/job/${x?.slug}`} style={{ width: "100%" }}>
+                                                        <div>
+                                                            <h3 className='headingJob' >
+                                                                <Link className="navbar-brand" to={`/job/${jobData[temp - 1]?.slug}`} style={{ width: "100%" }}>
 
-                                                            {truncateString(x?.job_name)}</Link>
-                                                    </h3>
-                                                    <p style={{ marginBottom: "0px" }}>
-                                                        <span >In : <a href="#" style={{ marginRight: "4px" }}>{x?.department},</a></span>
-                                                        <span>Last Date : {formatDate(x.last_date)}</span>
-                                                    </p> 
+                                                                    {truncateString(jobData[temp - 1]?.job_name)}
+                                                                </Link>
+                                                            </h3>
+                                                            <p className='headingJobInner'>
+                                                                <span>In:        <Link to={`/job/${jobData[temp - 1]?.slug}`}  > {jobData[temp - 1]?.department}, </Link> </span>
+                                                                <span>Last Date: <Link to={`/job/${jobData[temp - 1]?.slug}`}  > {formatDate(jobData[temp - 1]?.last_date)}</Link> </span>
+                                                            </p>
+                                                        </div>
                                                     </div>
                                                 </div>
+
+
+                                                {jobData[temp]!=undefined && <div className='card-job'>
+                                                    <div className='card-inner'>
+                                                        <div className='inner-most'>
+                                                            <h3 className='headingJob' >
+                                                                <Link className="navbar-brand" to={`/job/${jobData[temp]?.slug}`} style={{ width: "100%" }}>
+
+                                                                    {truncateString(jobData[temp]?.job_name)}
+                                                                </Link>
+                                                            </h3>
+                                                            <p className='headingJobInner'>
+                                                                <span>In:        <Link to={`/job/${jobData[temp]?.slug}`}  > {jobData[temp]?.department}, </Link> </span>
+                                                                <span>Last Date: <Link to={`/job/${jobData[temp]?.slug}`}  > {formatDate(jobData[temp]?.last_date)}</Link> </span>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>}
+
+
                                             </div>
 
                                         })}

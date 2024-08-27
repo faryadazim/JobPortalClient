@@ -33,7 +33,11 @@ export const formatDateForInputJob = (dateString) => {
 };
 
 export function truncateString(str) {
+
   var required = 75;
+  if(str==undefined){
+    return str;
+  }
   if (str.length <= required) {
     return str;
   } else {

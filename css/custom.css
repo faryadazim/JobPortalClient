@@ -73,7 +73,10 @@
 }
 
 .homehero {
-    padding: 1.5em 0 1em
+    /* padding: 8.5em 0 3em */
+    
+    padding: 6.5em 0 0em
+    /* padding: 1.5em 0 1em */
 }
 
 .home-message h1 {
@@ -298,11 +301,27 @@ h6 {
 .topbar p,
 small {
     font-family: Montserrat;
-    font-weight: 400 !important
+    font-weight: 700 !important
 }
 
 
 .image-bg{ 
-    background-position: 0px -24px;
-    background-image: url(https://res.cloudinary.com/dxvec7whr/image/upload/v1713048583/lxdeemdzm92aeklntr41.jpg); 
+    background-position: 0px -225px;
+    background-image: url(https://res.cloudinary.com/ddmd7feqp/image/upload/v1724652747/businessman-walking-stock-red-arrow_1_gv3pwn.jpg); 
+    /* background-image: url(https://res.cloudinary.com/ddmd7feqp/image/upload/v1724653411/businesswoman-climbs-stairs-form-arrow-city-background_1_jxlhzx.jpg);  */
+    /* background-image: url(https://res.cloudinary.com/ddmd7feqp/image/upload/v1724652747/businessman-walking-stock-red-arrow_1_gv3pwn.jpg);  */
+}
+
+
+.my-8{
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+.job-p{
+    font-size: 17px;
+}
+
+.fontWeight{
+    font-weight: 700 !important;
 }

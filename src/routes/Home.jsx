@@ -13,7 +13,7 @@ const Home = ({ currentSectors, setCurrentSectors }) => {
                             <p>
                                 Explore Opportunities in Government and Private Sectors!
                             </p>
-                            <div className="d-flex justify-content-centers">
+                            <div className="d-flex justify-content-centers" style={{display:"none"}}>
                             {currentSectors !== "All" && <div className="svg-wrapper">
                                     <div className="ttext">
                                         <a className="btn btn-custom  custom-width-sectors" onClick={()=>setCurrentSectors("All")}>View All Jobs <span className="fa fa-angle-right" /></a>

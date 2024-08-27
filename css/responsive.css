@@ -47,7 +47,7 @@
     .image-bg {
         background-position: -134px -24px;
 
-        background-image: url(https://res.cloudinary.com/dxvec7whr/image/upload/v1713048583/lxdeemdzm92aeklntr41.jpg);
+        background-image: url(https://res.cloudinary.com/ddmd7feqp/image/upload/v1724652747/businessman-walking-stock-red-arrow_1_gv3pwn.jpg);
     }
 
 
@@ -63,6 +63,12 @@
 
     .home-message-height {
         height: 260px;
+    }
+
+    .d-flex-direction { 
+        display: flex;
+        flex-direction: column;
+ 
     }
 }
 

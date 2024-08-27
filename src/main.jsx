@@ -75,6 +75,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           <Route index element={<Jobs />} />
           <Route path="job/:slug" element={<JobSingle />} />
           <Route path="category/:categorySlug" element={<JobsListing />} />
+          <Route path="search/:search" element={<JobsListing />} />
           <Route path="admin" element={<Login />} />
           <Route path="dashboard" element={<PrivateRoute> <Dashboard /></PrivateRoute>}>
             <Route path="manageJobs" element={<ManageJobs />} />

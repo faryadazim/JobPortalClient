@@ -5,6 +5,9 @@ import { formatDate, removeUnderscoreAndCapitalize } from './utilities'
 import Loader from './Loader'
 import './JobTable.css'
 import { endPoint } from './constraint'
+import Location from './assets/location1.png'
+import Calender from './assets/calender1.png'
+
 
 const JobSingle = () => {
     const { slug } = useParams();
@@ -90,7 +93,7 @@ const JobSingle = () => {
                 /<link:(.*?):(.*?)>/g,
                 '<a href="$2" target="_blank" rel="noopener noreferrer" style="font-weight: 800">$1</a>'
             );
-            return <p dangerouslySetInnerHTML={{ __html: replacedText }} />;
+            return <p className='job-p' dangerouslySetInnerHTML={{ __html: replacedText }} />;
         }
     };
 
@@ -119,13 +122,18 @@ const JobSingle = () => {
                                         </div>
                                     </div> */}
                                     <div className="col-md-8 ">
-                                        <div className="badge freelancer-badge">{x?.type ? x?.type : 'NEW'}</div>
+                                        {/* <div className="badge freelancer-badge">{x?.type ? x?.type : 'NEW'}</div>sF */}
                                         <h3>{x?.job_name}</h3>
-                                        <small>
-                                            {x?.department && <span>In : <a style={{ marginRight: "5px" }}>{x?.department}</a></span>}
-                                            <span>Last Date : {formatDate(x.last_date)}</span>    </small>
-                                        <div></div>
-                                        <p>{processText(x?.description_1)}</p>
+                                        <div className='my-8'>
+                                            {x?.department && <span style={{marginRight:"22px"}}>
+                                                <img src={Location} style={{ width: "20px", height: "20px", margin: "0px 5px" }} />
+                                                <a style={{ marginRight: "5px", fontSize: "17px" }}>{x?.department}</a></span>}
+                                            <span style={{ fontSize: "17px" }}>
+                                                <img src={Calender} style={{ width: "20px", height: "20px", margin: "0px 5px" }} />
+                                                {formatDate(x.last_date)}</span>
+                                        </div>
+                                     
+                                        <p className='job-p'>{processText(x?.description_1)}</p>
                                         {
                                             x?.is_apply_link && <a href={x?.apply_link} target="_blank" rel="noopener noreferrer" role="button" data-toggle="modal" className="btn btn-primary btn-custom " style={{ marginRight: "5px" }}>
                                                 Apply For Job
@@ -138,7 +146,7 @@ const JobSingle = () => {
                                         <div class="containerTbl" style={{ marginTop: "20px" }}>
                                             <div class="tableTbl">
                                                 <div class="tableTbl-header">
-                                                    <div class="header__itemTbl" ><a id="name" class="filter__linkTbl text-center" style={{ textAlign: "center" }}>Important Point | Qualification</a></div>
+                                                    <div class="header__itemTbl" ><a id="name" class="filter__linkTbl text-center" style={{ textAlign: "center"  , fontSize:"22px"}}>Important Point | Qualification</a></div>
                                                 </div>
 
                                                 {Object.entries(jobInfo).map(([key, value]) => (
@@ -156,7 +164,7 @@ const JobSingle = () => {
                                         <div className="post-single-job" style={{ marginTop: "20px" }}>
                                             <div className="single-content">
                                                 <h4 className="small-title"  >{x?.post_name}</h4>
-                                                <p className="lead">{processText(x?.description_2)}</p>
+                                                <p className="lead job-p">{processText(x?.description_2)}</p>
 
                                                 {
                                                     x?.is_how_to_apply && <>
@@ -191,11 +199,11 @@ const JobSingle = () => {
                                                     {
                                                         RecentJobs.map((job, index) => {
                                                             return <li key={index}>
-                                                                <div className="post" style={{ border: "1px solid #ededed" }}>
-                                                               
-                                                             
-                                                             <a>  <h4  onClick={() => navigate(`/job/${job?.slug}`)} style={{cursor: "pointer"}}>{job.job_name}</h4></a> 
- 
+                                                                <div className="post post-border" >
+
+
+                                                                    <a>  <h4 onClick={() => navigate(`/job/${job?.slug}`)} style={{ cursor: "pointer" }}>{job.job_name}</h4></a>
+
                                                                     <div className="blog-meta clearfix">
                                                                         <ul className="list-inline">
                                                                             <li><a href="#"><i className="fa fa-clock-o" /> {formatDate(job.last_date)}</a></li>
