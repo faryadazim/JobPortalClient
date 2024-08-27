@@ -6,6 +6,9 @@ import { formatDate, truncateString } from '../utilities'
 import { JobCategories, endPoint } from '../constraint'
 import { useOutletContext } from 'react-router-dom';
 
+import Location from '../assets/location1.png'
+import Calender from '../assets/calender1.png'
+
 const JobsListing = ({ currentSectors, setCurrentSectors }) => {
 
     const [jobData, setJobData] = useState([])
@@ -13,7 +16,7 @@ const JobsListing = ({ currentSectors, setCurrentSectors }) => {
     const [isLoading, setIsLoading] = useState(true);
     const [totalPages, setTotalPages] = useState(1);
 
-    const { categorySlug , search } = useParams();
+    const { categorySlug, search } = useParams();
     const search_ = search == null ? "-1" : search;
     const category = categorySlug == null ? "-1" : categorySlug;
     const type = categorySlug == null ? currentSectors : "All";
@@ -25,7 +28,7 @@ const JobsListing = ({ currentSectors, setCurrentSectors }) => {
         // setIsLoading(true)
         let config = {
             method: 'get',
-            url: `${endPoint}/job?page=${currentPage}&size=30&category=${category}&search=${search_}&type=${type==null?"All":type}`,
+            url: `${endPoint}/job?page=${currentPage}&size=30&category=${category}&search=${search_}&type=${type == null ? "All" : type}`,
 
         };
 
@@ -70,15 +73,15 @@ const JobsListing = ({ currentSectors, setCurrentSectors }) => {
         <div className="section lb d-none">
             <div className="container">
                 <div className="section-title text-center clearfix">    <h4>
-                    
+
                     {
-                        search_ == "-1" ? <span>{headLabel}</span>: <span>your search results for: {search_}</span>
-                    } 
-                    
-                    </h4>
+                        search_ == "-1" ? <span>{headLabel}</span> : <span>your search results for: {search_}</span>
+                    }
+
+                </h4>
                     <hr />
                     {category == null && <p className="lead">
-                        Find Pakistan Latest job | Govt and Private Jobs 
+                        Find Pakistan Latest job | Govt and Private Jobs
                         {/* your seach rhis: {context} */}
                     </p>}     </div>
                 <div className="all-jobs job-listing clearfix">
@@ -103,32 +106,40 @@ const JobsListing = ({ currentSectors, setCurrentSectors }) => {
 
                                                         <div>
                                                             <h3 className='headingJob' >
-                                                                <Link className="navbar-brand" to={`/job/${jobData[temp - 1]?.slug}`} style={{ width: "100%" }}>
+                                                                <Link className="navbar-brand" to={`/job/${jobData[temp - 1]?.slug}`} style={{ width: "100%", marginBottom: "3px" }}>
 
                                                                     {truncateString(jobData[temp - 1]?.job_name)}
                                                                 </Link>
                                                             </h3>
                                                             <p className='headingJobInner'>
-                                                                <span>In:        <Link to={`/job/${jobData[temp - 1]?.slug}`}  > {jobData[temp - 1]?.department}, </Link> </span>
-                                                                <span>Last Date: <Link to={`/job/${jobData[temp - 1]?.slug}`}  > {formatDate(jobData[temp - 1]?.last_date)}</Link> </span>
+                                                                <span >
+                                                                    <img src={Location} style={{ width: "16px", height: "16px", margin: "0px 5px" }} />
+                                                                    <Link to={`/job/${jobData[temp - 1]?.slug}`}  > {jobData[temp - 1]?.department}, </Link> </span>
+                                                                <span>
+                                                                    <img src={Calender} style={{ width: "16px", height: "16px", margin: "0px 5px" }} />
+                                                                    <Link to={`/job/${jobData[temp - 1]?.slug}`}  > {formatDate(jobData[temp - 1]?.last_date)}</Link> </span>
                                                             </p>
                                                         </div>
                                                     </div>
                                                 </div>
 
 
-                                                {jobData[temp]!=undefined && <div className='card-job'>
+                                                {jobData[temp] != undefined && <div className='card-job'>
                                                     <div className='card-inner'>
                                                         <div className='inner-most'>
                                                             <h3 className='headingJob' >
-                                                                <Link className="navbar-brand" to={`/job/${jobData[temp]?.slug}`} style={{ width: "100%" }}>
+                                                                <Link className="navbar-brand" to={`/job/${jobData[temp]?.slug}`} style={{ width: "100%", marginBottom: "3px" }}>
 
                                                                     {truncateString(jobData[temp]?.job_name)}
                                                                 </Link>
                                                             </h3>
                                                             <p className='headingJobInner'>
-                                                                <span>In:        <Link to={`/job/${jobData[temp]?.slug}`}  > {jobData[temp]?.department}, </Link> </span>
-                                                                <span>Last Date: <Link to={`/job/${jobData[temp]?.slug}`}  > {formatDate(jobData[temp]?.last_date)}</Link> </span>
+                                                                <span>
+                                                                    <img src={Location} style={{ width: "16px", height: "16px", margin: "0px 5px" }} />
+                                                                    <Link to={`/job/${jobData[temp]?.slug}`}  > {jobData[temp]?.department}, </Link> </span>
+                                                                <span>
+                                                                    <img src={Calender} style={{ width: "16px", height: "16px", margin: "0px 5px" }} />
+                                                                    <Link to={`/job/${jobData[temp]?.slug}`}  > {formatDate(jobData[temp]?.last_date)}</Link> </span>
                                                             </p>
                                                         </div>
                                                     </div>
