@@ -325,3 +325,14 @@ small {
 .fontWeight{
     font-weight: 700 !important;
 }
+
+
+.logo-redesgin{
+    background-color: white !important;
+    border-radius: 12px !important;
+    padding: 3px 19px !important;
+}
+
+.text-white{
+    color: #ffffff !important;
+}

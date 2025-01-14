@@ -36,25 +36,25 @@ function App() {
     <>
       <Analytics />
       <div id="wrapper">
-        <header className="header ">
+        <header className="header " style={{backgroundColor:"black"}}>
           <div className="container-fluid">
             <nav className="navbar navbar-default yamm">
               <div className="container">
                 <div className="navbar-header">
-                  <button type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                  <button type="button" className="navbar-toggle collapsed" style={{marginTop:"10px"}} data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
                     <span className="sr-only">Toggle navigation</span>
                     <span className="icon-bar" />
                     <span className="icon-bar" />
                     <span className="icon-bar" />
                   </button>
-                  <Link className="navbar-brand" to="/">
+                  <Link className="navbar-brand logo-redesgin" to="/">
                     <img src={Logo} className="img-responsive logoHeight" /></Link>
                 </div>
                 <div id="navbar" className="navbar-collapse collapse">
-                  <ul className="nav navbar-nav fontWeight">
+                  <ul className="nav navbar-nav fontWeight " style={{marginTop:"8px"}}>
                     {
                       JobCategories.map((x, index) => {
-                        return <li key={index} className='fontWeight'><Link to={`/category/${x.value}`} className='fontWeight'>{x.label}</Link></li>
+                        return <li key={index} className='fontWeight'><Link to={`/category/${x.value}`} className='fontWeight  text-white'>{x.label}</Link></li>
                       })
 
                     }
