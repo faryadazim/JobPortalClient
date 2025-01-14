@@ -65,6 +65,14 @@
         height: 260px;
     }
 
+    /* .d-flex-direction { 
+        display: flex;
+        flex-direction: column;
+ 
+    } */
+}
+@media (max-width:800px) {
+     
     .d-flex-direction { 
         display: flex;
         flex-direction: column;
