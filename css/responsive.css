@@ -74,8 +74,8 @@
 @media (max-width:800px) {
      
     .d-flex-direction { 
-        display: flex;
-        flex-direction: column;
+        display: flex !important;
+        flex-direction: column !important;
  
     }
 }
